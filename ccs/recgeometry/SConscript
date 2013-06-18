@@ -1,0 +1,83 @@
+#*****************************************************************************
+# @file      SConscript
+# @author    Bryan Salesky
+# @date      09/07/2006
+#
+# @attention Copyright (C) 2006 CMU. All rights reserved.
+#*****************************************************************************
+#!/usr/bin/python
+Import( 'commonEnv' )
+
+sourceFiles = [
+    'recBox2D.cpp',
+    'recPoint2D.cpp',
+    'recPose2D.cpp',
+    'recTransform2D.cpp',
+    'recBox3D.cpp',
+    'recPoint3D.cpp',
+    'recPose3D.cpp',
+    'recTransform3D.cpp',
+    'recLineSegment2D.cpp',
+    'recPolygon2D.cpp',
+    'recQuaternion.cpp',
+    'recVector2D.cpp',
+    'recLineSegment3D.cpp',
+    'recPolygon3D.cpp',
+    'recRadians.cpp',
+    'recVector3D.cpp',
+    'BezierCurve.cc',
+    'recGPC.cc',
+    'rectangleFitter.cc',
+    ]
+
+unitTestLibs = [
+    'recgeometry',
+    'boost_unit_test_framework',
+    'boost_serialization'
+    ]
+
+recGeometryLib = commonEnv.SharedLibrary(
+        target = 'recgeometry',
+        source = sourceFiles,
+        LIBS = [
+            'gpcl',
+        ]
+    )
+
+recSerializeUnitTest = commonEnv.Program(
+    target = "serializeUnitTest",
+    source = "serializeUnitTest.cc",
+    LIBS = unitTestLibs
+    )
+
+testBezierCurve = commonEnv.Program(
+    target = "testBezierCurve",
+    source = "testBezierCurve.cc",
+    LIBS = "recgeometry"
+    )
+
+recBasicUnitTest = commonEnv.Program(
+    target = "basicUnitTest",
+    source = "basicUnitTest.cc",
+    LIBS = unitTestLibs
+    )
+
+RecKDTree2DUnitTest = commonEnv.Program(
+    target = "RecKDTree2DUnitTest",
+    source = "RecKDTree2DUnitTest.cc",
+    LIBS = unitTestLibs
+)
+
+testRectangleFitter = commonEnv.Program(
+    target = "testRectangleFitter",
+    source = "testRectangleFitter.cc",
+    LIBS =     'recgeometry',
+    )
+
+testRecGPC = commonEnv.Program(
+    target = "testRecGPC",
+    source = "testRecGPC.cc",
+    LIBS = unitTestLibs
+    )
+
+commonEnv.InstallLibrary(recGeometryLib)

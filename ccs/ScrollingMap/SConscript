@@ -1,0 +1,44 @@
+#*****************************************************************************
+# @file      SConscript
+# @author    David Seneker
+# @date      02/23/2007
+#
+# @attention Copyright (C) 2007 CMU. All rights reserved.
+#*****************************************************************************
+## SConscript for ScrollingMap
+Import( 'commonEnv' )
+
+unitTestLibs = [
+    'recgeometry',
+    'boost_unit_test_framework',
+    'boost_serialization',
+    'boost_date_time',
+    'z'
+    ]
+
+scrollingMapUnitTest = commonEnv.Program(
+    target = "scrollingMapUnitTest",
+    source = "scrollingMapUnitTest.cc",
+    LIBS = unitTestLibs + [ 'Map' ]
+    )
+
+hysteresisScrollingMapUnitTest = commonEnv.Program(
+    target = 'hysteresisScrollingMapUnitTest',
+    source = 'hysteresisScrollingMapUnitTest.cc',
+    LIBS = unitTestLibs + [ 'Map', 'task']
+    )
+
+scrollingMapLogUpdate = commonEnv.Program(
+    target = 'ScrollingMapUpdateLog',
+    source = 'ScrollingMapUpdateLog.cc',
+    LIBS = [
+        'recgeometry',
+        'boost_serialization',
+        'boost_date_time',
+        'Map',
+        'task',
+        'z' ]
+    )
+
+commonEnv.InstallBinaries( [ scrollingMapLogUpdate ] )
+

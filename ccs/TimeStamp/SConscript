@@ -1,0 +1,24 @@
+#*****************************************************************************
+# @file      SConscript
+# @author    David Seneker
+# @date      03/08/2007
+#
+# @attention Copyright (C) 2007 CMU. All rights reserved.
+#*****************************************************************************
+## SConscript for TimeStamp
+Import( 'commonEnv' )
+
+unitTestLibs = [
+    'RoadWorldModel',
+    #'dataTypes',
+    'boost_unit_test_framework',
+    'boost_serialization',
+    'boost_date_time',
+    'z'
+    ]
+
+timeStampUnitTest = commonEnv.Program(
+    target = "timeSTampTest",
+    source = "timeStampTest.cc",
+    LIBS = unitTestLibs
+    )

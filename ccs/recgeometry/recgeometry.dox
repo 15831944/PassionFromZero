@@ -1,0 +1,4 @@
+/**@defgroup recGeometryGroup REC Geometry Types
+ * @ingroup commonGroup
+ * These are common geometric data types used by the project
+*/
