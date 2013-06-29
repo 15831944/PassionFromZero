@@ -1,34 +1,29 @@
-# This is the makefile to run the standalone ccs algorithm
+## This is the makefile to generate executable ccs
 
 CC = g++
 CFLAGS = -Wall -g
-OBJ = standalone_main.o standalone_seg.o STLneed.o
-DEP = standalone_seg.h STLneed.h
+SUBDIR = lib src
+OBJDIR_LIB = lib/obj
+OBJDIR_SRC = src/obj
 
+
+.PHONY: $(SUBDIR) clean
 
 all: ccs
 
-standalone_seg.o: standalone_seg.cc standalone_seg.h
-	$(CC) -c $< -o $@
-
-STLneed.o: STLneed.cc STLneed.h
-	$(CC) -c $< -o $@
-
-standalone_main.o: standalone_main.cc
-	$(CC) -c $< -o $@
-
-## the following: $(DEP) doesn't give us header file dependency as expected!
-#%.o: %.cc $(DEP)
-#	$(CC) -c $< -o $@
-
-ccs: $(OBJ)
-	$(CC) $^ -o $@ $(CFLAGS)
+ccs: $(SUBDIR)
+	$(CC) $(OBJDIR_LIB)/* $(OBJDIR_SRC)/* -o $@ $(CFLAGS)
 	@echo "Make Success!"
 
+$(SUBDIR):
+	@$(MAKE) -C $@
 
 #####
 clean:
-	rm -f *.o ccs
+	rm -f ccs *.txt
+
+cleanall: MAKE = make clean
+cleanall: $(SUBDIR) clean
 
 
-.PHONY: clean
+

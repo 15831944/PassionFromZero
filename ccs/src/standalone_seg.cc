@@ -13,7 +13,7 @@ void CCS::createSourceSet(const char* filename)
     RecPoint3D p;
 
     // read 2 lines first
-    for (i=0; i<1368; ++i)  // 2, 682, 1368
+    for (i=0; i<2; ++i)  // 2, 682, 1368
         getline(Ain, str);
 
     // then, begin reading points

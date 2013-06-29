@@ -10,7 +10,7 @@ int main()
 try
 {
     CCS ccs;
-    ccs.createSourceSet("Segmentation/Segm_allPointsSet_.txt");
+    ccs.createSourceSet("reference/Segmentation/Segm_allPointsSet_.txt");
     ccs.printSourceSet();
 
 
