@@ -1,14 +1,18 @@
 ## This is the makefile to generate obj/*.o of *.cc in src/
 
 CC = g++
-CFLAGS = -Wall
+CFLAGS = -Wall -g
 OBJDIR = obj
 _OBJ = main.o \
 	   standalone_seg.o
 OBJ= $(_OBJ:%=$(OBJDIR)/%)
 
 LIBDIR = ../lib
-DEP = standalone_seg.h STLneed.h $(LIBDIR)/RecPoint3D.h
+DEP = standalone_seg.h STLneed.h           \
+	  $(LIBDIR)/RecGeometry.h              \
+	  $(LIBDIR)/header-only/ScrollingMap.h \
+	  $(LIBDIR)/header-only/Map.h          \
+	  $(LIBDIR)/header-only/TimeStamp.h
 
 
 .PHONY: clean

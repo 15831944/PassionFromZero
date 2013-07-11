@@ -1,7 +1,7 @@
 #ifndef _STLNEED_H_
 #define _STLNEED_H_
 
-#include "../lib/RecPoint3D.h"
+#include "../lib/RecGeometry.h"
 
 /*** This allows us to create a stl::set<RecPoint3D, ltpt3D> ***/
 struct ltpt3D

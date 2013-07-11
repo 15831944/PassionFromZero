@@ -1,0 +1,17 @@
+07/11/13
+
+1. in setMapValue()
+
+	tempValue = floor((int)recordSBM_.get(*itr, isValid) * 255.0/maxLabel);
+
+recordSBM_ should be tempScrollingByteMap_
+
+2. in setWithCombineCheck()
+
+	labelGet() could return 0, this leads to the problem that whether we should label tempScrollingByteMap_'s occupied cells to 255, like what we did to recordSBM_.
+
+3. 
+
+ After segmentationMap_'s centerMap(), we can then do:  tempScrollingByteMap_ = segmentationMap_.getDataMap(), to adjust the map boundary
+
+

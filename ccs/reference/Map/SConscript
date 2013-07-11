@@ -1,0 +1,34 @@
+#*****************************************************************************
+# @file      SConscript
+# @author    David Seneker
+# @date      03/07/2007
+#
+# @attention Copyright (C) 2007 CMU. All rights reserved.
+#*****************************************************************************
+## SConscript for Map
+Import( 'commonEnv' )
+
+sourceFiles = [
+    'Map.cc'
+    ]
+
+Maplib = commonEnv.SharedLibrary( 
+        target = 'Map',
+        source = sourceFiles
+    )
+
+commonEnv.InstallLibrary( Maplib )
+
+unitTestLibs = [
+    'RoadWorldModel',
+    #'dataTypes',
+    'boost_unit_test_framework',
+    'boost_serialization',
+    'boost_date_time'
+    ]
+
+mapUnitTest = commonEnv.Program(
+    target = "mapUnitTest",
+    source = "mapUnitTest.cc",
+    LIBS = unitTestLibs + [ 'Map', 'z' ]
+    )
