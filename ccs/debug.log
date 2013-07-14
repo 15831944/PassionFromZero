@@ -15,3 +15,79 @@ recordSBM_ should be tempScrollingByteMap_
  After segmentationMap_'s centerMap(), we can then do:  tempScrollingByteMap_ = segmentationMap_.getDataMap(), to adjust the map boundary
 
 
+4. connectedComponentSearch():
+// check rightdown
+rightdownState = neighbourCheck(rightdownPT, isValid);
+if ( (boundaryState != 3) && rightdownState ) // not at the rightside
+{
+    if (!downState)
+    {
+        // left and leftdown, at least one cell is occupied, we should segmentsCombine()
+        if (leftState)
+            setWithCombineCheck(*ii, leftPT, rightdownPT, isValid);
+        else if (leftdownState)
+            setWithCombineCheck(*ii, leftdownPT, rightdownPT, isValid);
+    }
+}
+
+CHANGES TO:
+
+// check rightdown
+rightdownState = neighbourCheck(rightdownPT, isValid);
+if ( (boundaryState != 3) && rightdownState ) // not at the rightside
+{
+    if (!downState)
+    {
+        // left and leftdown, at least one cell is occupied, we should segmentsCombine()
+        if (leftState)
+            setWithCombineCheck(*ii, leftPT, rightdownPT, isValid);
+        else if (leftdownState)
+            setWithCombineCheck(*ii, leftdownPT, rightdownPT, isValid);
+        else
+            setWithoutCombineCheck(*ii, rightdownPT, isValid);
+    }
+}
+
+
+
+5.setWithCombineCheck():
+/* Set the cell label and Check combine  */
+void CCS::setWithCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT1, const RecPoint3D & infoPT2, bool & isValid)
+{
+    int tempLabel2 = labelGet(infoPT1, isValid);
+    int tempLabel3 = labelGet(infoPT2, isValid);
+    int tempLabel = min(tempLabel2, tempLabel3);
+    labelSet(operPT, tempLabel, isValid);
+    segLabel[tempLabel].push_back(operPT);
+
+    int tempLabel4 = max(tempLabel2, tempLabel3);
+    if ( tempLabel != tempLabel4 )  // two segments should combine!
+    {
+        //LogSegCombineCheck(operPT, );
+
+        segmentsCombine(tempLabel, tempLabel4, isValid);
+        //LogSegCombineCheck(operPT);
+    }
+}
+
+CHANGES TO:
+
+/* Set the cell label and Check combine  */
+void CCS::setWithCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT1, const RecPoint3D & infoPT2, bool & isValid)
+{
+    int tempLabel2 = labelGet(infoPT1, isValid);
+    int tempLabel3 = labelGet(infoPT2, isValid);
+    int tempLabel = min(tempLabel2, tempLabel3);
+//    labelSet(operPT, tempLabel, isValid);
+//    segLabel[tempLabel].push_back(operPT);
+
+    int tempLabel4 = max(tempLabel2, tempLabel3);
+    if ( tempLabel != tempLabel4 )  // two segments should combine!
+    {
+        //LogSegCombineCheck(operPT, );
+
+        segmentsCombine(tempLabel, tempLabel4, isValid);
+        //LogSegCombineCheck(operPT);
+    }
+}
+

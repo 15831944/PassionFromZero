@@ -215,6 +215,8 @@ void CCS::connectedComponentSearch()
                             setWithCombineCheck(*ii, leftPT, rightdownPT, isValid);
                         else if (leftdownState)
                             setWithCombineCheck(*ii, leftdownPT, rightdownPT, isValid);
+                        else
+                            setWithoutCombineCheck(*ii, rightdownPT, isValid);
                     }
                 }
 
@@ -356,8 +358,8 @@ void CCS::setWithCombineCheck(const RecPoint3D & operPT, const RecPoint3D & info
     int tempLabel2 = labelGet(infoPT1, isValid);
     int tempLabel3 = labelGet(infoPT2, isValid);
     int tempLabel = min(tempLabel2, tempLabel3);
-    labelSet(operPT, tempLabel, isValid);
-    segLabel[tempLabel].push_back(operPT);
+//    labelSet(operPT, tempLabel, isValid);
+//    segLabel[tempLabel].push_back(operPT);
 
     int tempLabel4 = max(tempLabel2, tempLabel3);
     if ( tempLabel != tempLabel4 )  // two segments should combine!
