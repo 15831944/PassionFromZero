@@ -1,9 +1,5 @@
 #include "standalone_seg.h"
 
-
-
-
-
 int main()
 {
 

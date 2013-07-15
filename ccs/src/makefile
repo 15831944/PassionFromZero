@@ -25,7 +25,7 @@ $(OBJDIR):
 
 $(OBJDIR)/%.o: %.cc $(DEP)
 	@$(CC) -c $< -o $@ $(CFLAGS)
-	@echo "make $@ success"
+	@echo "Build $@ success"
 
 
 clean:

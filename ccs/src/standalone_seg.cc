@@ -190,7 +190,7 @@ void CCS::connectedComponentSearch()
                 if (!leftState)
                     setWithoutCombineCheck(*ii, downPT, isValid);
                 else
-                    setWithCombineCheck(*ii, leftPT, downPT, isValid);
+                    setWithCombineCheck(leftPT, downPT, isValid);
             }
 
             // whether ckeck leftdown corner and rightdown corner
@@ -212,9 +212,9 @@ void CCS::connectedComponentSearch()
                     {
                         // left and leftdown, at least one cell is occupied, we should segmentsCombine()
                         if (leftState)
-                            setWithCombineCheck(*ii, leftPT, rightdownPT, isValid);
+                            setWithCombineCheck(leftPT, rightdownPT, isValid);
                         else if (leftdownState)
-                            setWithCombineCheck(*ii, leftdownPT, rightdownPT, isValid);
+                            setWithCombineCheck(leftdownPT, rightdownPT, isValid);
                         else
                             setWithoutCombineCheck(*ii, rightdownPT, isValid);
                     }
@@ -279,8 +279,8 @@ void CCS::connectedComponentSearch()
     } //for(set<RecPoint3D, ltpt3D>::const_iterator ...)
 
 
-    /************** TO DO ****************/
-    // segLabelAdjust();
+    //*** eliminate 0 size segments
+    segLabelAdjust();
 
 }
 
@@ -310,10 +310,6 @@ void CCS::labelSet(const RecPoint3D & dstPT, const int & value, bool & isValid)
 /* Comebine 2 segments  */
 void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax, bool & isValid)
 {
-
-//    if (!segLabel[segLabelMax].size())
- //       cout << "find size()==0 !!!segLabelMax: "<< segLabelMax <<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" <<endl;
-
     for(vector<RecPoint3D>::const_iterator itr = segLabel[segLabelMax].begin();
         itr != segLabel[segLabelMax].end();
         ++itr)
@@ -322,20 +318,6 @@ void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax, bool
         segLabel[segLabelMin].push_back(*itr);
     }
 
-    /*
-    if (1)
-    {
-        for(vector<RecPoint3D>::const_iterator itr = segLabel[segLabelMax].begin();
-            itr != segLabel[segLabelMax].end();
-            ++itr)
-        {
-            if ((int)labelGet(*itr, isValid) == segLabelMax)
-                cout << itr->x<< ","<<itr->y << " -************************************************8"<<endl;
-
-        }
-
-    }
-    */
 
     segLabel[segLabelMax].clear();  // delete the big-label segment
     //cout << "The clear one is segLabelMax: " <<segLabelMax << "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<endl;
@@ -353,20 +335,20 @@ void CCS::setWithoutCombineCheck(const RecPoint3D & operPT, const RecPoint3D & i
 
 
 /* Set the cell label and Check combine  */
-void CCS::setWithCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT1, const RecPoint3D & infoPT2, bool & isValid)
+void CCS::setWithCombineCheck(const RecPoint3D & infoPT1, const RecPoint3D & infoPT2, bool & isValid)
 {
-    int tempLabel2 = labelGet(infoPT1, isValid);
-    int tempLabel3 = labelGet(infoPT2, isValid);
-    int tempLabel = min(tempLabel2, tempLabel3);
+    int LabelPT1 = labelGet(infoPT1, isValid);
+    int LabelPT2 = labelGet(infoPT2, isValid);
+    int Labelmin = min(LabelPT1, LabelPT2);
 //    labelSet(operPT, tempLabel, isValid);
 //    segLabel[tempLabel].push_back(operPT);
 
-    int tempLabel4 = max(tempLabel2, tempLabel3);
-    if ( tempLabel != tempLabel4 )  // two segments should combine!
+    int Labelmax = max(LabelPT1, LabelPT2);
+    if ( Labelmin != Labelmax )  // two segments should combine!
     {
         //LogSegCombineCheck(operPT, );
 
-        segmentsCombine(tempLabel, tempLabel4, isValid);
+        segmentsCombine(Labelmin, Labelmax, isValid);
         //LogSegCombineCheck(operPT);
     }
 }
@@ -379,6 +361,51 @@ void CCS::createNewSegment(const RecPoint3D & dstPT, bool & isValid)
     labelSet(dstPT, maxLabel, isValid);
     segLabel[maxLabel].push_back(dstPT);
 }
+
+/* Adjust the segLabel, eliminate 0 size segments */
+void CCS::segLabelAdjust()
+{
+    int adjustTimes=0, firstZeroLabel=0;
+    bool isValid(false);
+
+    // adjust the label
+    for (int i=1; i<=maxLabel; ++i)
+    {
+        if (segLabel[i].size() == 0)
+        {
+            //cout << "segLabel[" << i << "] is zero (after each adjustion)." << endl;
+            adjustTimes++;
+            if (adjustTimes == 1)
+                firstZeroLabel=i;
+
+            for (int j=i; j<maxLabel; ++j)
+            {
+                //segLabel[j].clear();
+                segLabel[j]=segLabel[j+1];
+            }
+            segLabel[maxLabel].clear();
+            maxLabel--;
+
+            --i;  //in case there are 2 Continuous 0 size segments
+        }
+    }
+
+    //cout << adjustTimes << " adjustments have been done!" << endl;
+
+    // adjust the corresponding cell values
+    for (int i=maxLabel; i>=firstZeroLabel; --i)
+    {
+        for (vector<RecPoint3D>::iterator jj=segLabel[i].begin();
+             jj != segLabel[i].end();
+             ++jj)
+        {
+            labelSet(*jj, i, isValid);
+        }
+    }
+
+}
+
+
 
 
 void CCS::printSegLabel()
@@ -398,17 +425,6 @@ void CCS::printSegLabel()
         {
             temp = segLabel[i].size();
 
-            /*
-            //////////////////////////////////////////////////////////////////////////////////////////////////
-            for (vector<RecPoint3D>::const_iterator itr=segLabel[i].begin(); itr != segLabel[i].end(); ++itr)
-            {
-                Eout << fixed << setprecision(4) << itr->x << " " << itr->y << "    " << itr->z << "    " << (int)sbm.get(*itr, isTimeValid)
-                     << endl;   ///////////////////////////////////
-            }
-            //////////////////////////////////////////////////////////////////////////////////////////////////
-            */
-
-
             Eout << "segLabel[" << i << "]: " <<  temp << " cells" << " =====================================" << endl;
             if (!temp)
             {
@@ -424,7 +440,6 @@ void CCS::printSegLabel()
                 }
             }
             Eout << "==========================================================" << endl;
-
 
             cellCounts += temp;
         }

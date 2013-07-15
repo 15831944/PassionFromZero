@@ -11,9 +11,10 @@
 //STL includes
 #include "STLneed.h"
 #include <set>
+#include <vector>
 /////#include <utility>
 /////#include <algorithm>
-/////#include <vector>
+
 
 
 //Data Structure includes
@@ -66,11 +67,13 @@ public:
     bool neighbourCheck(const RecPoint3D & dstPT, bool & isValid);
     int labelGet(const RecPoint3D & dstPT, bool & isValid);
     void labelSet(const RecPoint3D & dstPT, const int & value, bool & isValid);
-    void segmentsCombine(const int & segLabelMin, const int & segLabelMax, bool & isValid);
 
+    void segmentsCombine(const int & segLabelMin, const int & segLabelMax, bool & isValid);
     void setWithoutCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT, bool & isValid);
-    void setWithCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT1, const RecPoint3D &infoPT2, bool & isValid);
+    void setWithCombineCheck(const RecPoint3D & infoPT1, const RecPoint3D &infoPT2, bool & isValid);
     void createNewSegment(const RecPoint3D & dstPT, bool & isValid);
+    void segLabelAdjust();
+
 
     void printSegLabel();
 

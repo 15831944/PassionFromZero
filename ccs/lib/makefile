@@ -33,7 +33,7 @@ $(OBJDIR):
 
 $(OBJDIR)/%.o: %.cc RecGeometry.h
 	@$(CC) -c $< -o $@ $(CFLAGS)
-	@echo "make $@ success"
+	@echo "Build $@ success"
 
 
 clean:
