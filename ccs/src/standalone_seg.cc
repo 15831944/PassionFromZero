@@ -69,11 +69,11 @@ void CCS::printSourceSet()
     Aout.open("SourceSet_Check.txt", ios::out|ios::trunc);
     if ( !Aout.is_open() ) throw FAILOPENSOURCESETCHECKFILE;
 
-    Aout << "PointsNum: " << sourceSet.size() << " ----------------------------------------" << endl;
+//    Aout << "PointsNum: " << sourceSet.size() << " ----------------------------------------" << endl;
     for (set<RecPoint3D,ltpt3D>::const_iterator itr = sourceSet.begin(); itr != sourceSet.end(); ++itr)
         Aout << fixed << setprecision(4) << itr->x << " " << itr->y << "    " << itr->z << endl;
 
-    Aout << "------------------------------------------------------------------------------" << endl;
+//    Aout << "------------------------------------------------------------------------------" << endl;
     Aout.close();
 }
 
