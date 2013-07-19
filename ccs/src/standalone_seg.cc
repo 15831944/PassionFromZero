@@ -41,7 +41,7 @@ void CCS::createSourceSet(const char* filename)
     RecPoint3D p;
 
     // read 2 lines first
-    for (i=0; i<2; ++i)  // 2, 682, 1368
+    for (i=0; i<6; ++i)  // 
         getline(Ain, str);
 
     // then, begin reading points
@@ -69,11 +69,11 @@ void CCS::printSourceSet()
     Aout.open("SourceSet_Check.txt", ios::out|ios::trunc);
     if ( !Aout.is_open() ) throw FAILOPENSOURCESETCHECKFILE;
 
-//    Aout << "PointsNum: " << sourceSet.size() << " ----------------------------------------" << endl;
+    Aout << "PointsNum: " << sourceSet.size() << " ----------------------------------------" << endl;
     for (set<RecPoint3D,ltpt3D>::const_iterator itr = sourceSet.begin(); itr != sourceSet.end(); ++itr)
         Aout << fixed << setprecision(4) << itr->x << " " << itr->y << "    " << itr->z << endl;
 
-//    Aout << "------------------------------------------------------------------------------" << endl;
+    Aout << "------------------------------------------------------------------------------" << endl;
     Aout.close();
 }
 
@@ -280,7 +280,7 @@ void CCS::connectedComponentSearch()
 
 
     //*** eliminate 0 size segments
-    segLabelAdjust();
+//    segLabelAdjust();
 
 }
 
