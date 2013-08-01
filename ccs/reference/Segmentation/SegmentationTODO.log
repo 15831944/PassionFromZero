@@ -1,0 +1,40 @@
+1. Create connection between Cells and RawPoints
+
+2. record( emptySegments++ ) at every time when running segmentsCombine()'s XXX.clear(), for improving efficiency of segLabelAdjust()
+   (maxLabel - emptySegments = the real NO. of segments)
+
+3. in segLabelAdjust() ( maybe we can rename it to createPointsSegmentsFromCells() ),  use vector<Segments> to do:
+		1. seg Label Adjust
+		2. substitute Cells with RawPoints
+
+4. To improve the efficiency, put the following out of the for_loop:
+	if (loopCounts == 1)  // look at the first point in the set
+	{
+
+
+	}
+
+5. modify createPointsSegmentsFromCells(): leave margin about maxLabel.
+   but we should check the reason why: maxLabel - emptySement != real nonempty segments number (it should be equal)
+
+
+6. in createPointsSegmentsFromCells()
+int i=0; // If the SegmentID starts from 0, then int i=-1;
+
+7. in spuriousNioseFilter, whether the clear() is needed. Yes, it is!
+
+8. in cellSweepSegment(), whether we can use isSpaceValid to enhance this function. neighboutCheck() already includes spaceValid check.
+
+9. pointsCount != spaceValidPointsCount. Why?! because we use spuriousNoiseFilter
+
+10. emptySegmentsCount != emptySegments
+
+(1) find out why there are repeated empty segments:
+segLabel[22] should be 0 cells, but it has:0cells, corresponding to segLabel[21
+segLabel[22] should be 0 cells, but it has:0cells, corresponding to segLabel[21
+segLabel[29] should be 0 cells, but it has:0cells, corresponding to segLabel[28
+segLabel[29] should be 0 cells, but it has:0cells, corresponding to segLabel[28
+
+(2) find out why there are nonempty segments that should be empty:
+segLabel[50] should be 0 cells, but it has:1cells, corresponding to segLabel[49
+

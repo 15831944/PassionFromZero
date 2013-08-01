@@ -12,7 +12,8 @@ ReadOnlyInterfaces = {
 
 #Output Interfaces
 WriteOnlyInterfaces = {
-    'SegmentationMapOutput' => Interfaces.get('SegmentationMapOutput'),
+	'SegmentationMapOutput' => Interfaces.get('SegmentationMapOutput'),
+	'IBEOSegmentationOutput' => Interfaces.get('IBEOSegmentationOutput')
 }
 
 
@@ -24,13 +25,19 @@ Parameters.update( {
                     'Max Messages' => 10,
                     'mapSize_m' => 100,
                     'cellSize_m' => 0.25, 
-                    'hysteresis_s' => 1.5,
+					'hysteresis_s' => 1.5,
 
-                    'EnablePublishSegmentationMap' => true,
-                    'CCSWay' => 8,                # 4: 4-way; 8: 8-way
+					'EnablePointsMultiBufferFilter' =>  false,
+					'frameLastingThreshold' => 3, # 2~5
+
+					'EnablePublishSegmentationMap' => false,
+					'CCSWay' => 8,                # 4: 4-connectivity; 8: 8-connectivity
                     'CellOccupiedThreshold' => 2, # > means occupied, < means unoccupied
+
+					'EnablePublishPointsSegments' => true,
+
                     
-                    'Debug_ScanPoints' => true,
+					'Debug_ScanPoints' => true,
 
                  } )
 
