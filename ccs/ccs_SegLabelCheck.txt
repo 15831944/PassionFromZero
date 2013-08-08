@@ -1,0 +1,38 @@
+[Segm_segLabel_]: 1   Number of Segments: 426 --------------------------------
+segLabel[0]: 0 cells
+segLabel[11]: 0 cells
+segLabel[32]: 0 cells
+segLabel[38]: 0 cells
+segLabel[72]: 0 cells
+segLabel[136]: 0 cells
+segLabel[150]: 0 cells
+segLabel[151]: 0 cells
+segLabel[167]: 0 cells
+segLabel[195]: 0 cells
+segLabel[204]: 0 cells
+segLabel[210]: 0 cells
+segLabel[212]: 0 cells
+segLabel[249]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 834, maxLabel: 426, emptySegmentsCount: 13
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): ---, emptySegments( segmentsCombine() ): 18
+segLabel[11] should be 0 cells, but it has:0cells, corresponding to segLabel[10
+segLabel[72] should be 0 cells, but it has:0cells, corresponding to segLabel[70
+segLabel[74] should be 0 cells, but it has:1cells, corresponding to segLabel[73
+segLabel[105] should be 0 cells, but it has:1cells, corresponding to segLabel[104
+segLabel[136] should be 0 cells, but it has:0cells, corresponding to segLabel[135
+segLabel[150] should be 0 cells, but it has:0cells, corresponding to segLabel[147
+segLabel[151] should be 0 cells, but it has:0cells, corresponding to segLabel[141
+segLabel[159] should be 0 cells, but it has:3cells, corresponding to segLabel[156
+segLabel[167] should be 0 cells, but it has:0cells, corresponding to segLabel[162
+segLabel[195] should be 0 cells, but it has:0cells, corresponding to segLabel[162
+segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[202
+segLabel[210] should be 0 cells, but it has:0cells, corresponding to segLabel[200
+segLabel[212] should be 0 cells, but it has:0cells, corresponding to segLabel[207
+segLabel[249] should be 0 cells, but it has:0cells, corresponding to segLabel[242
+segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
+segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
+segLabel[38] should be 0 cells, but it has:0cells, corresponding to segLabel[37
+segLabel[122] should be 0 cells, but it has:3cells, corresponding to segLabel[121
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!

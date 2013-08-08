@@ -115,7 +115,7 @@ void CCS::createSourceSet(const char* filename)
 void CCS::printSourceSet()
 {
     ofstream Aout;
-    Aout.open("SourceSet_Check.txt", ios::out|ios::trunc);
+    Aout.open("ccs_SourceSetCheck.txt", ios::out|ios::trunc);
     if ( !Aout.is_open() ) throw FAILOPENSOURCESETCHECKFILE;
 
     Aout << "PointsNum: " << sourceSet.size() << " ----------------------------------------" << endl;
@@ -362,7 +362,7 @@ void CCS::printSegLabel()
     static int Times_printSegLabel=1;
 
     ofstream Eout;
-    Eout.open("SegLabel_Check.txt", ios::out|ios::trunc);
+    Eout.open("ccs_SegLabelCheck.txt", ios::out|ios::trunc);
     if ( !Eout.is_open() )
         throw FAILOPENSEGLABELCHECKFILE;
 
