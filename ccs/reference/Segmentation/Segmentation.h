@@ -1,6 +1,6 @@
 /**
  * @file Segmentation.h
- * @author: Bruce (Haiyue) Li, (haiyuel@andrew.cmu.edu)
+ * @author: Haiyue (Bruce) Li, (haiyuel@andrew.cmu.edu)
  *
  * @attention Copyright (c) 2013
  * @attention Carnegie Mellon University
@@ -134,7 +134,8 @@ private:
                                                     //        Dout: Segm_TEMPmapCellValue_.txt
                                                     //        Eout: Segm_segLabel_.txt
                                                     //        Fout: Segm_cellIndex_.txt
-    ofstream Gout;                                  //        Gout: Segm_segLabelAdjustCheck_.txt
+    ofstream Gout, Hout;                            //        Gout: Segm_segLabelAdjustCheck_.txt
+                                                    //        Hout: Segm_vehiclePose_.txt
 
     vector< vector<RecPoint3D> > segLabel;          //*a vector array, each one(segLabel[1], segLabel[2]...)
                                                     // contains several cellcenter points
@@ -148,7 +149,7 @@ private:
 
 private:
     void checkInput(IBEOScanInput * ibeoInput__);
-    bool centerMap(HysteresisScrollingByteMap & map, VehicleStateInterpolated * vehIn, boost::posix_time::ptime operTime);
+    bool centerMap(VehicleStateInterpolated * vehIn, boost::posix_time::ptime operTime);
 
     template <typename T>
     void setCellValue(T & map, const RecPoint3D & pt, const int & value);
@@ -181,6 +182,7 @@ private:
     void LogSegLabelCheck(const int & nonEmptySegments);
     void LogCellIndexCheck();
     void LogSegLabelAdjustCheck(const int & adjustTimes_, const int & maxLabelBefore);
+    void LogVehiclePoseCheck(const bool & status_);
 
 
 

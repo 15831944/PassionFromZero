@@ -1,58 +1,67 @@
 RESET----------------------------------------------------------------------
 [Segm_cellIndex_]: 1 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 0, Total rawPoints within those cells: 0, Total spaceValidPoints: 0
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 0
+[Segm_cellIndex_]: 2 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 834, Total rawPoints within those cells: 1144, Total spaceValidPoints: 1144
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 834
+[Segm_cellIndex_]: 3 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 830, Total rawPoints within those cells: 1146, Total spaceValidPoints: 1146
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 830
+[Segm_cellIndex_]: 4 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 834, Total rawPoints within those cells: 1142, Total spaceValidPoints: 1142
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 834
+[Segm_cellIndex_]: 5 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 817, Total rawPoints within those cells: 1139, Total spaceValidPoints: 1139
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 817
+[Segm_cellIndex_]: 6 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 826, Total rawPoints within those cells: 1141, Total spaceValidPoints: 1141
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 826
+[Segm_cellIndex_]: 7 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 806, Total rawPoints within those cells: 1127, Total spaceValidPoints: 1127
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 806
+[Segm_cellIndex_]: 8 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 820, Total rawPoints within those cells: 1138, Total spaceValidPoints: 1138
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 820
+[Segm_cellIndex_]: 9 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 837, Total rawPoints within those cells: 1145, Total spaceValidPoints: 1145
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 837
+[Segm_cellIndex_]: 10 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 818, Total rawPoints within those cells: 1131, Total spaceValidPoints: 1131
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 818
-[Segm_cellIndex_]: 2 --------------------------------
+[Segm_cellIndex_]: 11 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 839, Total rawPoints within those cells: 1153, Total spaceValidPoints: 1153
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 839
-[Segm_cellIndex_]: 3 --------------------------------
+[Segm_cellIndex_]: 12 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 826, Total rawPoints within those cells: 1130, Total spaceValidPoints: 1130
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 826
+[Segm_cellIndex_]: 13 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 841, Total rawPoints within those cells: 1153, Total spaceValidPoints: 1153
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 841
-[Segm_cellIndex_]: 4 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 820, Total rawPoints within those cells: 1140, Total spaceValidPoints: 1140
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 820
-[Segm_cellIndex_]: 5 --------------------------------
+[Segm_cellIndex_]: 14 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 858, Total rawPoints within those cells: 1163, Total spaceValidPoints: 1163
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 858
-[Segm_cellIndex_]: 6 --------------------------------
+[Segm_cellIndex_]: 15 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 837, Total rawPoints within those cells: 1154, Total spaceValidPoints: 1154
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 837
-[Segm_cellIndex_]: 7 --------------------------------
+[Segm_cellIndex_]: 16 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 836, Total rawPoints within those cells: 1142, Total spaceValidPoints: 1142
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 836
-[Segm_cellIndex_]: 8 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 837, Total rawPoints within those cells: 1163, Total spaceValidPoints: 1163
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 837
-[Segm_cellIndex_]: 9 --------------------------------
+[Segm_cellIndex_]: 17 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 822, Total rawPoints within those cells: 1149, Total spaceValidPoints: 1149
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 822
+[Segm_cellIndex_]: 18 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 819, Total rawPoints within those cells: 1127, Total spaceValidPoints: 1127
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 819
-[Segm_cellIndex_]: 10 --------------------------------
+[Segm_cellIndex_]: 19 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 851, Total rawPoints within those cells: 1177, Total spaceValidPoints: 1177
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 851
-[Segm_cellIndex_]: 11 --------------------------------
+[Segm_cellIndex_]: 20 --------------------------------
+:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 835, Total rawPoints within those cells: 1149, Total spaceValidPoints: 1149
+::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 835
+[Segm_cellIndex_]: 21 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 824, Total rawPoints within those cells: 1135, Total spaceValidPoints: 1135
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 824
-[Segm_cellIndex_]: 12 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 804, Total rawPoints within those cells: 1131, Total spaceValidPoints: 1131
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 804
-[Segm_cellIndex_]: 13 --------------------------------
+[Segm_cellIndex_]: 22 --------------------------------
 :::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 832, Total rawPoints within those cells: 1169, Total spaceValidPoints: 1169
 ::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 832
-[Segm_cellIndex_]: 14 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 817, Total rawPoints within those cells: 1145, Total spaceValidPoints: 1145
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 817
-[Segm_cellIndex_]: 15 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 803, Total rawPoints within those cells: 1127, Total spaceValidPoints: 1127
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 803
-[Segm_cellIndex_]: 16 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 818, Total rawPoints within those cells: 1139, Total spaceValidPoints: 1139
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 818
-[Segm_cellIndex_]: 17 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 814, Total rawPoints within those cells: 1152, Total spaceValidPoints: 1152
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 814
-[Segm_cellIndex_]: 18 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 839, Total rawPoints within those cells: 1147, Total spaceValidPoints: 1147
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 839
-[Segm_cellIndex_]: 19 --------------------------------
-:::::::::::::::::::::::::::::::::::::::::: Total occupied cells(cellIndex): 807, Total rawPoints within those cells: 1128, Total spaceValidPoints: 1128
-::::::::::::::::::::::::::::::::::::::::::::::Total cellCentrePoints(ibeoSet): 807

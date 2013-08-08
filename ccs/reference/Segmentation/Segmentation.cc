@@ -1,6 +1,6 @@
 /**
  * @file Segmentation.cc
- * @author: Bruce (Haiyue) Li, (haiyuel@andrew.cmu.edu)
+ * @author: Haiyue (Bruce) Li, (haiyuel@andrew.cmu.edu)
  *
  * @attention Copyright (c) 2013
  * @attention Carnegie Mellon University
@@ -76,7 +76,7 @@ bool Segmentation::initialize(void)
     GET_WRITEONLY_INTERFACE(segmentationMapOutput_, ScrollingByteMapOutput, "SegmentationMapOutput", task::GetIntfFailOnErrors);
     GET_WRITEONLY_INTERFACE(pointsSegmentsOutput_,IBEOSegmentationOutput,"IBEOSegmentationOutput",task::GetIntfFailOnErrors);
 
-    //*** Get task parameters we need
+    //*** Get task parameters we need from the corresponding config file
     configSection.get("Max Messages", maxMessages_, 10);
     configSection.get("mapSize_m", mapSize_m_, 100);
     configSection.get("cellSize_m", cellSize_m_, 0.25);
@@ -164,6 +164,11 @@ bool Segmentation::initialize(void)
         Gout << "RESET----------------------------------------------------------------------" << endl;
         Gout << "adjustTimes_" << "\t" << "emptySegments" << "\t" << "maxLabelBefore" << "\t" << "maxLabelAfter" << endl;
         Gout.close();
+
+        // Segm_vehiclePose_.txt reset to 0 length
+        Hout.open("./src/perception/SensorFuser/Segm_vehiclePose_.txt", ios::out|ios::trunc); // if Segm_vehiclePose_.txt already exists, delete it first
+        Hout << "RESET----------------------------------------------------------------------" << endl;
+        Hout.close();
     }
 
 
@@ -283,14 +288,14 @@ void Segmentation::generateCellCentrePointsSet()
 
     ptime pointTime = scan.header.scanStart; // + ii->offsetIntoScan; -->timestamp
 
-    // Touch corners to get the output map centered on the vehicle.
-    if ( !centerMap(segmentationMap_, vehicleStateInput_, pointTime) )
+    // Touch corners to get the segmentationMap_/tempSBMap_ centered on the vehicle.
+    if ( !centerMap(vehicleStateInput_, pointTime) )
     {
-        logger_.log_warn("Center Segmentation Map Failed!");
+        logger_.log_warn("Center Map Failed!");
         return;
     }
 
-    // Find boundary of the map
+    // Find boundary of the map, for computing row/col of cellIndex
     boundaryMIN_ = segmentationMap_.getDataMap().getBounds().getMinPoint();
 
 /////////////////
@@ -366,7 +371,7 @@ void Segmentation::generateCellCentrePointsSet()
  * Corners are defined as VehicleState +/- mapSize/2.0.
  * @return true if we succeeded, false if we never managed to get a most recent vehicle state.
  */
-bool Segmentation::centerMap(HysteresisScrollingByteMap & map, VehicleStateInterpolated * vehIn, ptime operTime)
+bool Segmentation::centerMap(VehicleStateInterpolated * vehIn, ptime operTime)
 {
     bool status(false);
 
@@ -375,8 +380,9 @@ bool Segmentation::centerMap(HysteresisScrollingByteMap & map, VehicleStateInter
 
     if(status)
     {
-        RecPoint2D point(curVehicleState_.pose.x, curVehicleState_.pose.y);
-        map.centerAt(point);
+        RecPoint2D vehiclePoint(curVehicleState_.pose.x, curVehicleState_.pose.y);
+        segmentationMap_.centerAt(vehiclePoint);
+        tempSBMap_.centerAt(vehiclePoint);
     }
     else
     {
@@ -384,6 +390,9 @@ bool Segmentation::centerMap(HysteresisScrollingByteMap & map, VehicleStateInter
                                      convertToSeconds(operTime),
                                      convertToSeconds(getSystemTime())       );
     }
+
+    if (Debug_ScanPoints_)
+        LogVehiclePoseCheck(status);
 
     return status;
 }
@@ -1031,6 +1040,32 @@ void Segmentation::LogSegLabelAdjustCheck(const int & adjustTimes_, const int & 
 
     Gout.close();
 }
+
+
+void Segmentation::LogVehiclePoseCheck(const bool & status_)
+{
+    static int Times_LogVehiclePoseCheck=1;
+
+    Hout.open("./src/perception/SensorFuser/Segm_vehiclePose_.txt", ios::out|ios::app);
+    if (!Hout.is_open())
+    {
+        logger_.log_warn("Open Segm_vehiclePose_.txt failed!");
+        return;
+    }
+
+    Hout << "[Segm_vehiclePose_]: " << Times_LogVehiclePoseCheck << "\t" << "curVehicleState_.pose: " << endl;
+    if (status_)
+        Hout << fixed << setprecision(4) << curVehicleState_.pose.x << "\t" << curVehicleState_.pose.y << endl;
+    else
+        Hout << "Not Applicable" << "\t" << "Not Applicable" << endl;
+
+    Hout << "--------------------------------------------------------------------------------------------" <<endl;
+
+    Hout.close();
+
+    Times_LogVehiclePoseCheck++;
+}
+
 
 
 

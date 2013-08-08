@@ -1,5 +1,400 @@
 RESET----------------------------------------------------------------------
-[Segm_segLabel_]: 1   Number of Segments: 400 --------------------------------
+[Segm_segLabel_]: 1   Number of Segments: 0 --------------------------------
+segLabel[0]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 0, maxLabel: 0, emptySegmentsCount: 0
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 0, emptySegments( segmentsCombine() ): 0
+[Segm_segLabel_]: 2   Number of Segments: 426 --------------------------------
+segLabel[0]: 0 cells
+segLabel[11]: 0 cells
+segLabel[32]: 0 cells
+segLabel[38]: 0 cells
+segLabel[72]: 0 cells
+segLabel[136]: 0 cells
+segLabel[150]: 0 cells
+segLabel[151]: 0 cells
+segLabel[167]: 0 cells
+segLabel[195]: 0 cells
+segLabel[204]: 0 cells
+segLabel[210]: 0 cells
+segLabel[212]: 0 cells
+segLabel[249]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 834, maxLabel: 426, emptySegmentsCount: 13
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 413, emptySegments( segmentsCombine() ): 18
+segLabel[11] should be 0 cells, but it has:0cells, corresponding to segLabel[10
+segLabel[72] should be 0 cells, but it has:0cells, corresponding to segLabel[70
+segLabel[74] should be 0 cells, but it has:1cells, corresponding to segLabel[73
+segLabel[105] should be 0 cells, but it has:1cells, corresponding to segLabel[104
+segLabel[136] should be 0 cells, but it has:0cells, corresponding to segLabel[135
+segLabel[150] should be 0 cells, but it has:0cells, corresponding to segLabel[147
+segLabel[151] should be 0 cells, but it has:0cells, corresponding to segLabel[141
+segLabel[159] should be 0 cells, but it has:3cells, corresponding to segLabel[156
+segLabel[167] should be 0 cells, but it has:0cells, corresponding to segLabel[162
+segLabel[195] should be 0 cells, but it has:0cells, corresponding to segLabel[162
+segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[202
+segLabel[210] should be 0 cells, but it has:0cells, corresponding to segLabel[200
+segLabel[212] should be 0 cells, but it has:0cells, corresponding to segLabel[207
+segLabel[249] should be 0 cells, but it has:0cells, corresponding to segLabel[242
+segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
+segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
+segLabel[38] should be 0 cells, but it has:0cells, corresponding to segLabel[37
+segLabel[122] should be 0 cells, but it has:3cells, corresponding to segLabel[121
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 3   Number of Segments: 409 --------------------------------
+segLabel[0]: 0 cells
+segLabel[18]: 0 cells
+segLabel[54]: 0 cells
+segLabel[59]: 0 cells
+segLabel[67]: 0 cells
+segLabel[91]: 0 cells
+segLabel[115]: 0 cells
+segLabel[135]: 0 cells
+segLabel[143]: 0 cells
+segLabel[146]: 0 cells
+segLabel[147]: 0 cells
+segLabel[148]: 0 cells
+segLabel[154]: 0 cells
+segLabel[158]: 0 cells
+segLabel[159]: 0 cells
+segLabel[162]: 0 cells
+segLabel[171]: 0 cells
+segLabel[178]: 0 cells
+segLabel[179]: 0 cells
+segLabel[186]: 0 cells
+segLabel[201]: 0 cells
+segLabel[204]: 0 cells
+segLabel[216]: 0 cells
+segLabel[222]: 0 cells
+segLabel[245]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 830, maxLabel: 409, emptySegmentsCount: 24
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 385, emptySegments( segmentsCombine() ): 31
+segLabel[2] should be 0 cells, but it has:1cells, corresponding to segLabel[1
+segLabel[54] should be 0 cells, but it has:0cells, corresponding to segLabel[51
+segLabel[59] should be 0 cells, but it has:0cells, corresponding to segLabel[58
+segLabel[67] should be 0 cells, but it has:0cells, corresponding to segLabel[65
+segLabel[91] should be 0 cells, but it has:0cells, corresponding to segLabel[90
+segLabel[129] should be 0 cells, but it has:1cells, corresponding to segLabel[126
+segLabel[135] should be 0 cells, but it has:0cells, corresponding to segLabel[127
+segLabel[142] should be 0 cells, but it has:1cells, corresponding to segLabel[127
+segLabel[145] should be 0 cells, but it has:10cells, corresponding to segLabel[126
+segLabel[143] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[147] should be 0 cells, but it has:0cells, corresponding to segLabel[127
+segLabel[154] should be 0 cells, but it has:0cells, corresponding to segLabel[127
+segLabel[148] should be 0 cells, but it has:0cells, corresponding to segLabel[146
+segLabel[158] should be 0 cells, but it has:0cells, corresponding to segLabel[155
+segLabel[159] should be 0 cells, but it has:0cells, corresponding to segLabel[157
+segLabel[162] should be 0 cells, but it has:0cells, corresponding to segLabel[155
+segLabel[171] should be 0 cells, but it has:0cells, corresponding to segLabel[170
+segLabel[178] should be 0 cells, but it has:0cells, corresponding to segLabel[173
+segLabel[179] should be 0 cells, but it has:0cells, corresponding to segLabel[155
+segLabel[186] should be 0 cells, but it has:0cells, corresponding to segLabel[155
+segLabel[201] should be 0 cells, but it has:0cells, corresponding to segLabel[195
+segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[195
+segLabel[216] should be 0 cells, but it has:0cells, corresponding to segLabel[195
+segLabel[222] should be 0 cells, but it has:0cells, corresponding to segLabel[220
+segLabel[245] should be 0 cells, but it has:0cells, corresponding to segLabel[244
+segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
+segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
+segLabel[106] should be 0 cells, but it has:1cells, corresponding to segLabel[105
+segLabel[115] should be 0 cells, but it has:0cells, corresponding to segLabel[111
+segLabel[142] should be 0 cells, but it has:1cells, corresponding to segLabel[139
+segLabel[146] should be 0 cells, but it has:0cells, corresponding to segLabel[145
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 4   Number of Segments: 418 --------------------------------
+segLabel[0]: 0 cells
+segLabel[2]: 0 cells
+segLabel[10]: 0 cells
+segLabel[74]: 0 cells
+segLabel[87]: 0 cells
+segLabel[95]: 0 cells
+segLabel[127]: 0 cells
+segLabel[140]: 0 cells
+segLabel[141]: 0 cells
+segLabel[149]: 0 cells
+segLabel[171]: 0 cells
+segLabel[172]: 0 cells
+segLabel[224]: 0 cells
+segLabel[245]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 834, maxLabel: 418, emptySegmentsCount: 13
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 405, emptySegments( segmentsCombine() ): 21
+segLabel[2] should be 0 cells, but it has:0cells, corresponding to segLabel[1
+segLabel[10] should be 0 cells, but it has:0cells, corresponding to segLabel[9
+segLabel[87] should be 0 cells, but it has:0cells, corresponding to segLabel[84
+segLabel[95] should be 0 cells, but it has:0cells, corresponding to segLabel[91
+segLabel[125] should be 0 cells, but it has:1cells, corresponding to segLabel[124
+segLabel[127] should be 0 cells, but it has:0cells, corresponding to segLabel[126
+segLabel[131] should be 0 cells, but it has:1cells, corresponding to segLabel[124
+segLabel[140] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[146] should be 0 cells, but it has:1cells, corresponding to segLabel[124
+segLabel[141] should be 0 cells, but it has:0cells, corresponding to segLabel[132
+segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[150] should be 0 cells, but it has:4cells, corresponding to segLabel[147
+segLabel[154] should be 0 cells, but it has:1cells, corresponding to segLabel[132
+segLabel[160] should be 0 cells, but it has:1cells, corresponding to segLabel[132
+segLabel[171] should be 0 cells, but it has:0cells, corresponding to segLabel[132
+segLabel[172] should be 0 cells, but it has:0cells, corresponding to segLabel[170
+segLabel[224] should be 0 cells, but it has:0cells, corresponding to segLabel[194
+segLabel[245] should be 0 cells, but it has:0cells, corresponding to segLabel[242
+segLabel[74] should be 0 cells, but it has:0cells, corresponding to segLabel[73
+segLabel[117] should be 0 cells, but it has:5cells, corresponding to segLabel[116
+segLabel[120] should be 0 cells, but it has:2cells, corresponding to segLabel[117
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 5   Number of Segments: 404 --------------------------------
+segLabel[0]: 0 cells
+segLabel[18]: 0 cells
+segLabel[52]: 0 cells
+segLabel[59]: 0 cells
+segLabel[93]: 0 cells
+segLabel[142]: 0 cells
+segLabel[143]: 0 cells
+segLabel[145]: 0 cells
+segLabel[151]: 0 cells
+segLabel[157]: 0 cells
+segLabel[159]: 0 cells
+segLabel[166]: 0 cells
+segLabel[172]: 0 cells
+segLabel[173]: 0 cells
+segLabel[183]: 0 cells
+segLabel[189]: 0 cells
+segLabel[191]: 0 cells
+segLabel[205]: 0 cells
+segLabel[208]: 0 cells
+segLabel[226]: 0 cells
+segLabel[244]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 817, maxLabel: 404, emptySegmentsCount: 20
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 384, emptySegments( segmentsCombine() ): 25
+segLabel[52] should be 0 cells, but it has:0cells, corresponding to segLabel[49
+segLabel[59] should be 0 cells, but it has:0cells, corresponding to segLabel[57
+segLabel[70] should be 0 cells, but it has:1cells, corresponding to segLabel[68
+segLabel[93] should be 0 cells, but it has:0cells, corresponding to segLabel[92
+segLabel[128] should be 0 cells, but it has:1cells, corresponding to segLabel[127
+segLabel[140] should be 0 cells, but it has:1cells, corresponding to segLabel[134
+segLabel[143] should be 0 cells, but it has:0cells, corresponding to segLabel[127
+segLabel[141] should be 0 cells, but it has:4cells, corresponding to segLabel[136
+segLabel[134] should be 0 cells, but it has:1cells, corresponding to segLabel[124
+segLabel[151] should be 0 cells, but it has:0cells, corresponding to segLabel[124
+segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[144
+segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[152
+segLabel[159] should be 0 cells, but it has:0cells, corresponding to segLabel[152
+segLabel[166] should be 0 cells, but it has:0cells, corresponding to segLabel[152
+segLabel[172] should be 0 cells, but it has:0cells, corresponding to segLabel[171
+segLabel[173] should be 0 cells, but it has:0cells, corresponding to segLabel[152
+segLabel[183] should be 0 cells, but it has:0cells, corresponding to segLabel[170
+segLabel[189] should be 0 cells, but it has:0cells, corresponding to segLabel[188
+segLabel[191] should be 0 cells, but it has:0cells, corresponding to segLabel[152
+segLabel[205] should be 0 cells, but it has:0cells, corresponding to segLabel[199
+segLabel[208] should be 0 cells, but it has:0cells, corresponding to segLabel[199
+segLabel[226] should be 0 cells, but it has:0cells, corresponding to segLabel[225
+segLabel[244] should be 0 cells, but it has:0cells, corresponding to segLabel[243
+segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
+segLabel[142] should be 0 cells, but it has:0cells, corresponding to segLabel[141
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 6   Number of Segments: 410 --------------------------------
+segLabel[0]: 0 cells
+segLabel[2]: 0 cells
+segLabel[22]: 0 cells
+segLabel[29]: 0 cells
+segLabel[54]: 0 cells
+segLabel[55]: 0 cells
+segLabel[56]: 0 cells
+segLabel[69]: 0 cells
+segLabel[103]: 0 cells
+segLabel[129]: 0 cells
+segLabel[135]: 0 cells
+segLabel[145]: 0 cells
+segLabel[148]: 0 cells
+segLabel[156]: 0 cells
+segLabel[157]: 0 cells
+segLabel[164]: 0 cells
+segLabel[170]: 0 cells
+segLabel[176]: 0 cells
+segLabel[178]: 0 cells
+segLabel[181]: 0 cells
+segLabel[191]: 0 cells
+segLabel[203]: 0 cells
+segLabel[204]: 0 cells
+segLabel[214]: 0 cells
+segLabel[215]: 0 cells
+segLabel[242]: 0 cells
+segLabel[248]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 826, maxLabel: 410, emptySegmentsCount: 26
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 384, emptySegments( segmentsCombine() ): 31
+segLabel[2] should be 0 cells, but it has:0cells, corresponding to segLabel[1
+segLabel[50] should be 0 cells, but it has:1cells, corresponding to segLabel[49
+segLabel[54] should be 0 cells, but it has:0cells, corresponding to segLabel[51
+segLabel[55] should be 0 cells, but it has:0cells, corresponding to segLabel[51
+segLabel[56] should be 0 cells, but it has:0cells, corresponding to segLabel[51
+segLabel[69] should be 0 cells, but it has:0cells, corresponding to segLabel[64
+segLabel[129] should be 0 cells, but it has:0cells, corresponding to segLabel[128
+segLabel[135] should be 0 cells, but it has:0cells, corresponding to segLabel[125
+segLabel[143] should be 0 cells, but it has:2cells, corresponding to segLabel[125
+segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[128
+segLabel[148] should be 0 cells, but it has:0cells, corresponding to segLabel[146
+segLabel[156] should be 0 cells, but it has:0cells, corresponding to segLabel[151
+segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[154
+segLabel[164] should be 0 cells, but it has:0cells, corresponding to segLabel[154
+segLabel[170] should be 0 cells, but it has:0cells, corresponding to segLabel[154
+segLabel[178] should be 0 cells, but it has:0cells, corresponding to segLabel[167
+segLabel[181] should be 0 cells, but it has:0cells, corresponding to segLabel[180
+segLabel[176] should be 0 cells, but it has:0cells, corresponding to segLabel[154
+segLabel[191] should be 0 cells, but it has:0cells, corresponding to segLabel[189
+segLabel[203] should be 0 cells, but it has:0cells, corresponding to segLabel[193
+segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[193
+segLabel[215] should be 0 cells, but it has:0cells, corresponding to segLabel[206
+segLabel[214] should be 0 cells, but it has:0cells, corresponding to segLabel[193
+segLabel[242] should be 0 cells, but it has:0cells, corresponding to segLabel[241
+segLabel[248] should be 0 cells, but it has:0cells, corresponding to segLabel[247
+segLabel[22] should be 0 cells, but it has:0cells, corresponding to segLabel[21
+segLabel[22] should be 0 cells, but it has:0cells, corresponding to segLabel[21
+segLabel[29] should be 0 cells, but it has:0cells, corresponding to segLabel[28
+segLabel[29] should be 0 cells, but it has:0cells, corresponding to segLabel[28
+segLabel[103] should be 0 cells, but it has:0cells, corresponding to segLabel[102
+segLabel[106] should be 0 cells, but it has:1cells, corresponding to segLabel[105
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 7   Number of Segments: 402 --------------------------------
+segLabel[0]: 0 cells
+segLabel[11]: 0 cells
+segLabel[24]: 0 cells
+segLabel[62]: 0 cells
+segLabel[81]: 0 cells
+segLabel[124]: 0 cells
+segLabel[144]: 0 cells
+segLabel[145]: 0 cells
+segLabel[147]: 0 cells
+segLabel[157]: 0 cells
+segLabel[193]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 806, maxLabel: 402, emptySegmentsCount: 10
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 392, emptySegments( segmentsCombine() ): 15
+segLabel[11] should be 0 cells, but it has:0cells, corresponding to segLabel[10
+segLabel[62] should be 0 cells, but it has:0cells, corresponding to segLabel[61
+segLabel[98] should be 0 cells, but it has:3cells, corresponding to segLabel[96
+segLabel[124] should be 0 cells, but it has:0cells, corresponding to segLabel[123
+segLabel[134] should be 0 cells, but it has:3cells, corresponding to segLabel[127
+segLabel[144] should be 0 cells, but it has:0cells, corresponding to segLabel[122
+segLabel[139] should be 0 cells, but it has:1cells, corresponding to segLabel[130
+segLabel[147] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[150
+segLabel[193] should be 0 cells, but it has:0cells, corresponding to segLabel[191
+segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
+segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
+segLabel[81] should be 0 cells, but it has:0cells, corresponding to segLabel[78
+segLabel[98] should be 0 cells, but it has:3cells, corresponding to segLabel[93
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 8   Number of Segments: 411 --------------------------------
+segLabel[0]: 0 cells
+segLabel[2]: 0 cells
+segLabel[19]: 0 cells
+segLabel[30]: 0 cells
+segLabel[52]: 0 cells
+segLabel[56]: 0 cells
+segLabel[63]: 0 cells
+segLabel[65]: 0 cells
+segLabel[97]: 0 cells
+segLabel[103]: 0 cells
+segLabel[133]: 0 cells
+segLabel[139]: 0 cells
+segLabel[149]: 0 cells
+segLabel[151]: 0 cells
+segLabel[152]: 0 cells
+segLabel[157]: 0 cells
+segLabel[160]: 0 cells
+segLabel[161]: 0 cells
+segLabel[183]: 0 cells
+segLabel[186]: 0 cells
+segLabel[206]: 0 cells
+segLabel[209]: 0 cells
+segLabel[218]: 0 cells
+segLabel[247]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 820, maxLabel: 411, emptySegmentsCount: 23
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 388, emptySegments( segmentsCombine() ): 28
+segLabel[2] should be 0 cells, but it has:0cells, corresponding to segLabel[1
+segLabel[52] should be 0 cells, but it has:0cells, corresponding to segLabel[51
+segLabel[56] should be 0 cells, but it has:0cells, corresponding to segLabel[54
+segLabel[63] should be 0 cells, but it has:0cells, corresponding to segLabel[62
+segLabel[65] should be 0 cells, but it has:0cells, corresponding to segLabel[64
+segLabel[133] should be 0 cells, but it has:0cells, corresponding to segLabel[129
+segLabel[139] should be 0 cells, but it has:0cells, corresponding to segLabel[130
+segLabel[146] should be 0 cells, but it has:1cells, corresponding to segLabel[130
+segLabel[148] should be 0 cells, but it has:3cells, corresponding to segLabel[129
+segLabel[151] should be 0 cells, but it has:0cells, corresponding to segLabel[130
+segLabel[152] should be 0 cells, but it has:0cells, corresponding to segLabel[143
+segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[130
+segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[143
+segLabel[161] should be 0 cells, but it has:0cells, corresponding to segLabel[155
+segLabel[160] should be 0 cells, but it has:0cells, corresponding to segLabel[158
+segLabel[186] should be 0 cells, but it has:0cells, corresponding to segLabel[180
+segLabel[183] should be 0 cells, but it has:0cells, corresponding to segLabel[163
+segLabel[206] should be 0 cells, but it has:0cells, corresponding to segLabel[198
+segLabel[209] should be 0 cells, but it has:0cells, corresponding to segLabel[198
+segLabel[218] should be 0 cells, but it has:0cells, corresponding to segLabel[198
+segLabel[247] should be 0 cells, but it has:0cells, corresponding to segLabel[246
+segLabel[19] should be 0 cells, but it has:0cells, corresponding to segLabel[17
+segLabel[30] should be 0 cells, but it has:0cells, corresponding to segLabel[29
+segLabel[30] should be 0 cells, but it has:0cells, corresponding to segLabel[29
+segLabel[97] should be 0 cells, but it has:0cells, corresponding to segLabel[96
+segLabel[103] should be 0 cells, but it has:0cells, corresponding to segLabel[102
+segLabel[106] should be 0 cells, but it has:1cells, corresponding to segLabel[105
+segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[148
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 9   Number of Segments: 404 --------------------------------
+segLabel[0]: 0 cells
+segLabel[10]: 0 cells
+segLabel[23]: 0 cells
+segLabel[28]: 0 cells
+segLabel[34]: 0 cells
+segLabel[96]: 0 cells
+segLabel[124]: 0 cells
+segLabel[126]: 0 cells
+segLabel[130]: 0 cells
+segLabel[141]: 0 cells
+segLabel[145]: 0 cells
+segLabel[146]: 0 cells
+segLabel[149]: 0 cells
+segLabel[155]: 0 cells
+segLabel[158]: 0 cells
+segLabel[179]: 0 cells
+segLabel[196]: 0 cells
+segLabel[205]: 0 cells
+segLabel[221]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 837, maxLabel: 404, emptySegmentsCount: 18
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 386, emptySegments( segmentsCombine() ): 19
+segLabel[10] should be 0 cells, but it has:0cells, corresponding to segLabel[9
+segLabel[96] should be 0 cells, but it has:0cells, corresponding to segLabel[93
+segLabel[124] should be 0 cells, but it has:0cells, corresponding to segLabel[123
+segLabel[126] should be 0 cells, but it has:0cells, corresponding to segLabel[125
+segLabel[130] should be 0 cells, but it has:0cells, corresponding to segLabel[123
+segLabel[140] should be 0 cells, but it has:1cells, corresponding to segLabel[131
+segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[139
+segLabel[146] should be 0 cells, but it has:0cells, corresponding to segLabel[123
+segLabel[141] should be 0 cells, but it has:0cells, corresponding to segLabel[132
+segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[147
+segLabel[155] should be 0 cells, but it has:0cells, corresponding to segLabel[132
+segLabel[158] should be 0 cells, but it has:0cells, corresponding to segLabel[132
+segLabel[179] should be 0 cells, but it has:0cells, corresponding to segLabel[132
+segLabel[196] should be 0 cells, but it has:0cells, corresponding to segLabel[194
+segLabel[205] should be 0 cells, but it has:0cells, corresponding to segLabel[200
+segLabel[221] should be 0 cells, but it has:0cells, corresponding to segLabel[200
+segLabel[23] should be 0 cells, but it has:0cells, corresponding to segLabel[22
+segLabel[28] should be 0 cells, but it has:0cells, corresponding to segLabel[27
+segLabel[34] should be 0 cells, but it has:0cells, corresponding to segLabel[32
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 10   Number of Segments: 400 --------------------------------
 segLabel[0]: 0 cells
 segLabel[3]: 0 cells
 segLabel[84]: 0 cells
@@ -34,7 +429,7 @@ segLabel[134] should be 0 cells, but it has:1cells, corresponding to segLabel[13
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 2   Number of Segments: 392 --------------------------------
+[Segm_segLabel_]: 11   Number of Segments: 392 --------------------------------
 segLabel[0]: 0 cells
 segLabel[6]: 0 cells
 segLabel[12]: 0 cells
@@ -94,7 +489,57 @@ segLabel[129] should be 0 cells, but it has:0cells, corresponding to segLabel[12
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 3   Number of Segments: 404 --------------------------------
+[Segm_segLabel_]: 12   Number of Segments: 413 --------------------------------
+segLabel[0]: 0 cells
+segLabel[10]: 0 cells
+segLabel[21]: 0 cells
+segLabel[27]: 0 cells
+segLabel[85]: 0 cells
+segLabel[97]: 0 cells
+segLabel[111]: 0 cells
+segLabel[113]: 0 cells
+segLabel[126]: 0 cells
+segLabel[127]: 0 cells
+segLabel[131]: 0 cells
+segLabel[145]: 0 cells
+segLabel[148]: 0 cells
+segLabel[152]: 0 cells
+segLabel[161]: 0 cells
+segLabel[171]: 0 cells
+segLabel[182]: 0 cells
+segLabel[202]: 0 cells
+segLabel[204]: 0 cells
+segLabel[241]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 826, maxLabel: 413, emptySegmentsCount: 19
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 394, emptySegments( segmentsCombine() ): 24
+segLabel[10] should be 0 cells, but it has:0cells, corresponding to segLabel[9
+segLabel[20] should be 0 cells, but it has:19cells, corresponding to segLabel[19
+segLabel[85] should be 0 cells, but it has:0cells, corresponding to segLabel[84
+segLabel[97] should be 0 cells, but it has:0cells, corresponding to segLabel[93
+segLabel[113] should be 0 cells, but it has:0cells, corresponding to segLabel[112
+segLabel[126] should be 0 cells, but it has:0cells, corresponding to segLabel[125
+segLabel[127] should be 0 cells, but it has:0cells, corresponding to segLabel[124
+segLabel[131] should be 0 cells, but it has:0cells, corresponding to segLabel[125
+segLabel[148] should be 0 cells, but it has:0cells, corresponding to segLabel[142
+segLabel[149] should be 0 cells, but it has:1cells, corresponding to segLabel[125
+segLabel[144] should be 0 cells, but it has:2cells, corresponding to segLabel[133
+segLabel[152] should be 0 cells, but it has:0cells, corresponding to segLabel[150
+segLabel[161] should be 0 cells, but it has:0cells, corresponding to segLabel[133
+segLabel[171] should be 0 cells, but it has:0cells, corresponding to segLabel[133
+segLabel[182] should be 0 cells, but it has:0cells, corresponding to segLabel[178
+segLabel[202] should be 0 cells, but it has:0cells, corresponding to segLabel[194
+segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[194
+segLabel[241] should be 0 cells, but it has:0cells, corresponding to segLabel[238
+segLabel[21] should be 0 cells, but it has:0cells, corresponding to segLabel[20
+segLabel[21] should be 0 cells, but it has:0cells, corresponding to segLabel[20
+segLabel[27] should be 0 cells, but it has:0cells, corresponding to segLabel[26
+segLabel[85] should be 0 cells, but it has:0cells, corresponding to segLabel[83
+segLabel[111] should be 0 cells, but it has:0cells, corresponding to segLabel[108
+segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[144
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 13   Number of Segments: 404 --------------------------------
 segLabel[0]: 0 cells
 segLabel[15]: 0 cells
 segLabel[21]: 0 cells
@@ -150,55 +595,7 @@ segLabel[141] should be 0 cells, but it has:0cells, corresponding to segLabel[14
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 4   Number of Segments: 408 --------------------------------
-segLabel[0]: 0 cells
-segLabel[23]: 0 cells
-segLabel[29]: 0 cells
-segLabel[68]: 0 cells
-segLabel[70]: 0 cells
-segLabel[105]: 0 cells
-segLabel[114]: 0 cells
-segLabel[138]: 0 cells
-segLabel[149]: 0 cells
-segLabel[153]: 0 cells
-segLabel[154]: 0 cells
-segLabel[157]: 0 cells
-segLabel[158]: 0 cells
-segLabel[167]: 0 cells
-segLabel[206]: 0 cells
-segLabel[209]: 0 cells
-segLabel[225]: 0 cells
-segLabel[241]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 820, maxLabel: 408, emptySegmentsCount: 17
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 391, emptySegments( segmentsCombine() ): 24
-segLabel[20] should be 0 cells, but it has:6cells, corresponding to segLabel[19
-segLabel[26] should be 0 cells, but it has:1cells, corresponding to segLabel[25
-segLabel[68] should be 0 cells, but it has:0cells, corresponding to segLabel[66
-segLabel[70] should be 0 cells, but it has:0cells, corresponding to segLabel[67
-segLabel[105] should be 0 cells, but it has:0cells, corresponding to segLabel[104
-segLabel[138] should be 0 cells, but it has:0cells, corresponding to segLabel[129
-segLabel[139] should be 0 cells, but it has:2cells, corresponding to segLabel[137
-segLabel[153] should be 0 cells, but it has:0cells, corresponding to segLabel[143
-segLabel[154] should be 0 cells, but it has:0cells, corresponding to segLabel[129
-segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[147
-segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[148
-segLabel[158] should be 0 cells, but it has:0cells, corresponding to segLabel[155
-segLabel[167] should be 0 cells, but it has:0cells, corresponding to segLabel[147
-segLabel[206] should be 0 cells, but it has:0cells, corresponding to segLabel[198
-segLabel[209] should be 0 cells, but it has:0cells, corresponding to segLabel[198
-segLabel[225] should be 0 cells, but it has:0cells, corresponding to segLabel[198
-segLabel[241] should be 0 cells, but it has:0cells, corresponding to segLabel[238
-segLabel[23] should be 0 cells, but it has:0cells, corresponding to segLabel[22
-segLabel[23] should be 0 cells, but it has:0cells, corresponding to segLabel[22
-segLabel[29] should be 0 cells, but it has:0cells, corresponding to segLabel[28
-segLabel[29] should be 0 cells, but it has:0cells, corresponding to segLabel[28
-segLabel[90] should be 0 cells, but it has:1cells, corresponding to segLabel[89
-segLabel[114] should be 0 cells, but it has:0cells, corresponding to segLabel[112
-segLabel[140] should be 0 cells, but it has:1cells, corresponding to segLabel[139
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 5   Number of Segments: 412 --------------------------------
+[Segm_segLabel_]: 14   Number of Segments: 412 --------------------------------
 segLabel[0]: 0 cells
 segLabel[15]: 0 cells
 segLabel[16]: 0 cells
@@ -254,7 +651,7 @@ segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[14
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 6   Number of Segments: 430 --------------------------------
+[Segm_segLabel_]: 15   Number of Segments: 430 --------------------------------
 segLabel[0]: 0 cells
 segLabel[24]: 0 cells
 segLabel[34]: 0 cells
@@ -300,7 +697,7 @@ segLabel[124] should be 0 cells, but it has:1cells, corresponding to segLabel[12
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 7   Number of Segments: 396 --------------------------------
+[Segm_segLabel_]: 16   Number of Segments: 396 --------------------------------
 segLabel[0]: 0 cells
 segLabel[6]: 0 cells
 segLabel[21]: 0 cells
@@ -357,61 +754,51 @@ segLabel[130] should be 0 cells, but it has:0cells, corresponding to segLabel[12
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 8   Number of Segments: 408 --------------------------------
+[Segm_segLabel_]: 17   Number of Segments: 421 --------------------------------
 segLabel[0]: 0 cells
-segLabel[18]: 0 cells
-segLabel[24]: 0 cells
-segLabel[54]: 0 cells
-segLabel[107]: 0 cells
+segLabel[10]: 0 cells
+segLabel[21]: 0 cells
+segLabel[27]: 0 cells
+segLabel[32]: 0 cells
+segLabel[99]: 0 cells
+segLabel[101]: 0 cells
+segLabel[120]: 0 cells
+segLabel[124]: 0 cells
 segLabel[128]: 0 cells
-segLabel[141]: 0 cells
-segLabel[142]: 0 cells
 segLabel[144]: 0 cells
-segLabel[146]: 0 cells
-segLabel[148]: 0 cells
-segLabel[152]: 0 cells
-segLabel[155]: 0 cells
-segLabel[156]: 0 cells
-segLabel[157]: 0 cells
-segLabel[176]: 0 cells
-segLabel[178]: 0 cells
-segLabel[189]: 0 cells
-segLabel[198]: 0 cells
-segLabel[205]: 0 cells
-segLabel[216]: 0 cells
-segLabel[240]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 837, maxLabel: 408, emptySegmentsCount: 21
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 387, emptySegments( segmentsCombine() ): 26
-segLabel[29] should be 0 cells, but it has:2cells, corresponding to segLabel[28
-segLabel[54] should be 0 cells, but it has:0cells, corresponding to segLabel[53
-segLabel[93] should be 0 cells, but it has:1cells, corresponding to segLabel[92
-segLabel[128] should be 0 cells, but it has:0cells, corresponding to segLabel[127
-segLabel[136] should be 0 cells, but it has:3cells, corresponding to segLabel[124
-segLabel[141] should be 0 cells, but it has:0cells, corresponding to segLabel[124
-segLabel[144] should be 0 cells, but it has:0cells, corresponding to segLabel[127
-segLabel[142] should be 0 cells, but it has:0cells, corresponding to segLabel[138
-segLabel[152] should be 0 cells, but it has:0cells, corresponding to segLabel[124
-segLabel[146] should be 0 cells, but it has:0cells, corresponding to segLabel[145
-segLabel[155] should be 0 cells, but it has:0cells, corresponding to segLabel[138
-segLabel[156] should be 0 cells, but it has:0cells, corresponding to segLabel[154
-segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[154
-segLabel[178] should be 0 cells, but it has:0cells, corresponding to segLabel[166
-segLabel[176] should be 0 cells, but it has:0cells, corresponding to segLabel[159
-segLabel[189] should be 0 cells, but it has:0cells, corresponding to segLabel[188
-segLabel[198] should be 0 cells, but it has:0cells, corresponding to segLabel[195
-segLabel[205] should be 0 cells, but it has:0cells, corresponding to segLabel[195
-segLabel[216] should be 0 cells, but it has:0cells, corresponding to segLabel[213
-segLabel[240] should be 0 cells, but it has:0cells, corresponding to segLabel[239
-segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
-segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
-segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
-segLabel[79] should be 0 cells, but it has:1cells, corresponding to segLabel[78
-segLabel[107] should be 0 cells, but it has:0cells, corresponding to segLabel[102
-segLabel[148] should be 0 cells, but it has:0cells, corresponding to segLabel[143
+segLabel[150]: 0 cells
+segLabel[164]: 0 cells
+segLabel[174]: 0 cells
+segLabel[185]: 0 cells
+segLabel[208]: 0 cells
+segLabel[225]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 822, maxLabel: 421, emptySegmentsCount: 16
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 405, emptySegments( segmentsCombine() ): 21
+segLabel[10] should be 0 cells, but it has:0cells, corresponding to segLabel[9
+segLabel[91] should be 0 cells, but it has:1cells, corresponding to segLabel[88
+segLabel[99] should be 0 cells, but it has:0cells, corresponding to segLabel[97
+segLabel[101] should be 0 cells, but it has:0cells, corresponding to segLabel[97
+segLabel[129] should be 0 cells, but it has:2cells, corresponding to segLabel[128
+segLabel[150] should be 0 cells, but it has:0cells, corresponding to segLabel[128
+segLabel[144] should be 0 cells, but it has:0cells, corresponding to segLabel[142
+segLabel[154] should be 0 cells, but it has:1cells, corresponding to segLabel[151
+segLabel[164] should be 0 cells, but it has:0cells, corresponding to segLabel[142
+segLabel[174] should be 0 cells, but it has:0cells, corresponding to segLabel[142
+segLabel[185] should be 0 cells, but it has:0cells, corresponding to segLabel[142
+segLabel[208] should be 0 cells, but it has:0cells, corresponding to segLabel[207
+segLabel[225] should be 0 cells, but it has:0cells, corresponding to segLabel[207
+segLabel[21] should be 0 cells, but it has:0cells, corresponding to segLabel[20
+segLabel[27] should be 0 cells, but it has:0cells, corresponding to segLabel[26
+segLabel[27] should be 0 cells, but it has:0cells, corresponding to segLabel[26
+segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
+segLabel[100] should be 0 cells, but it has:1cells, corresponding to segLabel[96
+segLabel[120] should be 0 cells, but it has:0cells, corresponding to segLabel[119
+segLabel[124] should be 0 cells, but it has:0cells, corresponding to segLabel[122
+segLabel[128] should be 0 cells, but it has:0cells, corresponding to segLabel[125
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 9   Number of Segments: 411 --------------------------------
+[Segm_segLabel_]: 18   Number of Segments: 411 --------------------------------
 segLabel[0]: 0 cells
 segLabel[11]: 0 cells
 segLabel[24]: 0 cells
@@ -452,7 +839,7 @@ segLabel[31] should be 0 cells, but it has:0cells, corresponding to segLabel[30
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 10   Number of Segments: 411 --------------------------------
+[Segm_segLabel_]: 19   Number of Segments: 411 --------------------------------
 segLabel[0]: 0 cells
 segLabel[14]: 0 cells
 segLabel[32]: 0 cells
@@ -501,7 +888,57 @@ segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[14
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 11   Number of Segments: 410 --------------------------------
+[Segm_segLabel_]: 20   Number of Segments: 422 --------------------------------
+segLabel[0]: 0 cells
+segLabel[9]: 0 cells
+segLabel[23]: 0 cells
+segLabel[28]: 0 cells
+segLabel[41]: 0 cells
+segLabel[85]: 0 cells
+segLabel[94]: 0 cells
+segLabel[97]: 0 cells
+segLabel[119]: 0 cells
+segLabel[139]: 0 cells
+segLabel[144]: 0 cells
+segLabel[145]: 0 cells
+segLabel[149]: 0 cells
+segLabel[157]: 0 cells
+segLabel[167]: 0 cells
+segLabel[183]: 0 cells
+segLabel[199]: 0 cells
+segLabel[202]: 0 cells
+segLabel[222]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 835, maxLabel: 422, emptySegmentsCount: 18
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 404, emptySegments( segmentsCombine() ): 25
+segLabel[9] should be 0 cells, but it has:0cells, corresponding to segLabel[8
+segLabel[41] should be 0 cells, but it has:0cells, corresponding to segLabel[40
+segLabel[85] should be 0 cells, but it has:0cells, corresponding to segLabel[84
+segLabel[94] should be 0 cells, but it has:0cells, corresponding to segLabel[92
+segLabel[97] should be 0 cells, but it has:0cells, corresponding to segLabel[92
+segLabel[126] should be 0 cells, but it has:1cells, corresponding to segLabel[125
+segLabel[128] should be 0 cells, but it has:1cells, corresponding to segLabel[123
+segLabel[144] should be 0 cells, but it has:0cells, corresponding to segLabel[134
+segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[125
+segLabel[139] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[146
+segLabel[152] should be 0 cells, but it has:1cells, corresponding to segLabel[137
+segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[167] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[183] should be 0 cells, but it has:0cells, corresponding to segLabel[137
+segLabel[199] should be 0 cells, but it has:0cells, corresponding to segLabel[197
+segLabel[202] should be 0 cells, but it has:0cells, corresponding to segLabel[201
+segLabel[222] should be 0 cells, but it has:0cells, corresponding to segLabel[201
+segLabel[23] should be 0 cells, but it has:0cells, corresponding to segLabel[22
+segLabel[23] should be 0 cells, but it has:0cells, corresponding to segLabel[22
+segLabel[28] should be 0 cells, but it has:0cells, corresponding to segLabel[27
+segLabel[28] should be 0 cells, but it has:0cells, corresponding to segLabel[27
+segLabel[93] should be 0 cells, but it has:1cells, corresponding to segLabel[91
+segLabel[113] should be 0 cells, but it has:2cells, corresponding to segLabel[110
+segLabel[119] should be 0 cells, but it has:0cells, corresponding to segLabel[115
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+[Segm_segLabel_]: 21   Number of Segments: 410 --------------------------------
 segLabel[0]: 0 cells
 segLabel[12]: 0 cells
 segLabel[13]: 0 cells
@@ -559,47 +996,7 @@ segLabel[144] should be 0 cells, but it has:0cells, corresponding to segLabel[14
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 12   Number of Segments: 401 --------------------------------
-segLabel[0]: 0 cells
-segLabel[27]: 0 cells
-segLabel[92]: 0 cells
-segLabel[103]: 0 cells
-segLabel[142]: 0 cells
-segLabel[157]: 0 cells
-segLabel[158]: 0 cells
-segLabel[171]: 0 cells
-segLabel[178]: 0 cells
-segLabel[210]: 0 cells
-segLabel[221]: 0 cells
-segLabel[243]: 0 cells
-segLabel[246]: 0 cells
-segLabel[251]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 804, maxLabel: 401, emptySegmentsCount: 13
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 388, emptySegments( segmentsCombine() ): 20
-segLabel[22] should be 0 cells, but it has:3cells, corresponding to segLabel[21
-segLabel[30] should be 0 cells, but it has:3cells, corresponding to segLabel[27
-segLabel[85] should be 0 cells, but it has:3cells, corresponding to segLabel[81
-segLabel[92] should be 0 cells, but it has:0cells, corresponding to segLabel[89
-segLabel[102] should be 0 cells, but it has:3cells, corresponding to segLabel[101
-segLabel[142] should be 0 cells, but it has:0cells, corresponding to segLabel[137
-segLabel[158] should be 0 cells, but it has:0cells, corresponding to segLabel[155
-segLabel[157] should be 0 cells, but it has:0cells, corresponding to segLabel[148
-segLabel[171] should be 0 cells, but it has:0cells, corresponding to segLabel[155
-segLabel[178] should be 0 cells, but it has:0cells, corresponding to segLabel[155
-segLabel[210] should be 0 cells, but it has:0cells, corresponding to segLabel[202
-segLabel[221] should be 0 cells, but it has:0cells, corresponding to segLabel[217
-segLabel[243] should be 0 cells, but it has:0cells, corresponding to segLabel[242
-segLabel[246] should be 0 cells, but it has:0cells, corresponding to segLabel[242
-segLabel[251] should be 0 cells, but it has:0cells, corresponding to segLabel[250
-segLabel[27] should be 0 cells, but it has:0cells, corresponding to segLabel[25
-segLabel[86] should be 0 cells, but it has:3cells, corresponding to segLabel[85
-segLabel[103] should be 0 cells, but it has:0cells, corresponding to segLabel[102
-segLabel[111] should be 0 cells, but it has:1cells, corresponding to segLabel[109
-segLabel[140] should be 0 cells, but it has:1cells, corresponding to segLabel[139
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 13   Number of Segments: 419 --------------------------------
+[Segm_segLabel_]: 22   Number of Segments: 419 --------------------------------
 segLabel[0]: 0 cells
 segLabel[15]: 0 cells
 segLabel[16]: 0 cells
@@ -651,296 +1048,6 @@ segLabel[16] should be 0 cells, but it has:0cells, corresponding to segLabel[15
 segLabel[15] should be 0 cells, but it has:0cells, corresponding to segLabel[13
 segLabel[22] should be 0 cells, but it has:0cells, corresponding to segLabel[21
 segLabel[49] should be 0 cells, but it has:0cells, corresponding to segLabel[47
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 14   Number of Segments: 417 --------------------------------
-segLabel[0]: 0 cells
-segLabel[8]: 0 cells
-segLabel[14]: 0 cells
-segLabel[101]: 0 cells
-segLabel[119]: 0 cells
-segLabel[148]: 0 cells
-segLabel[165]: 0 cells
-segLabel[172]: 0 cells
-segLabel[177]: 0 cells
-segLabel[185]: 0 cells
-segLabel[204]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 817, maxLabel: 417, emptySegmentsCount: 10
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 407, emptySegments( segmentsCombine() ): 17
-segLabel[4] should be 0 cells, but it has:1cells, corresponding to segLabel[1
-segLabel[14] should be 0 cells, but it has:0cells, corresponding to segLabel[13
-segLabel[92] should be 0 cells, but it has:1cells, corresponding to segLabel[83
-segLabel[142] should be 0 cells, but it has:1cells, corresponding to segLabel[138
-segLabel[148] should be 0 cells, but it has:0cells, corresponding to segLabel[143
-segLabel[157] should be 0 cells, but it has:1cells, corresponding to segLabel[150
-segLabel[156] should be 0 cells, but it has:1cells, corresponding to segLabel[138
-segLabel[165] should be 0 cells, but it has:0cells, corresponding to segLabel[160
-segLabel[172] should be 0 cells, but it has:0cells, corresponding to segLabel[161
-segLabel[177] should be 0 cells, but it has:0cells, corresponding to segLabel[161
-segLabel[185] should be 0 cells, but it has:0cells, corresponding to segLabel[161
-segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[161
-segLabel[8] should be 0 cells, but it has:0cells, corresponding to segLabel[7
-segLabel[38] should be 0 cells, but it has:1cells, corresponding to segLabel[36
-segLabel[101] should be 0 cells, but it has:0cells, corresponding to segLabel[100
-segLabel[119] should be 0 cells, but it has:0cells, corresponding to segLabel[117
-segLabel[122] should be 0 cells, but it has:2cells, corresponding to segLabel[121
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 15   Number of Segments: 403 --------------------------------
-segLabel[0]: 0 cells
-segLabel[12]: 0 cells
-segLabel[26]: 0 cells
-segLabel[100]: 0 cells
-segLabel[105]: 0 cells
-segLabel[113]: 0 cells
-segLabel[133]: 0 cells
-segLabel[140]: 0 cells
-segLabel[149]: 0 cells
-segLabel[150]: 0 cells
-segLabel[160]: 0 cells
-segLabel[165]: 0 cells
-segLabel[172]: 0 cells
-segLabel[218]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 803, maxLabel: 403, emptySegmentsCount: 13
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 390, emptySegments( segmentsCombine() ): 19
-segLabel[2] should be 0 cells, but it has:1cells, corresponding to segLabel[1
-segLabel[12] should be 0 cells, but it has:0cells, corresponding to segLabel[11
-segLabel[85] should be 0 cells, but it has:1cells, corresponding to segLabel[77
-segLabel[100] should be 0 cells, but it has:0cells, corresponding to segLabel[98
-segLabel[133] should be 0 cells, but it has:0cells, corresponding to segLabel[128
-segLabel[140] should be 0 cells, but it has:0cells, corresponding to segLabel[131
-segLabel[150] should be 0 cells, but it has:0cells, corresponding to segLabel[146
-segLabel[149] should be 0 cells, but it has:0cells, corresponding to segLabel[141
-segLabel[160] should be 0 cells, but it has:0cells, corresponding to segLabel[146
-segLabel[165] should be 0 cells, but it has:0cells, corresponding to segLabel[146
-segLabel[172] should be 0 cells, but it has:0cells, corresponding to segLabel[146
-segLabel[218] should be 0 cells, but it has:0cells, corresponding to segLabel[213
-segLabel[21] should be 0 cells, but it has:1cells, corresponding to segLabel[19
-segLabel[26] should be 0 cells, but it has:0cells, corresponding to segLabel[25
-segLabel[26] should be 0 cells, but it has:0cells, corresponding to segLabel[25
-segLabel[51] should be 0 cells, but it has:1cells, corresponding to segLabel[49
-segLabel[83] should be 0 cells, but it has:2cells, corresponding to segLabel[82
-segLabel[105] should be 0 cells, but it has:0cells, corresponding to segLabel[104
-segLabel[113] should be 0 cells, but it has:0cells, corresponding to segLabel[111
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 16   Number of Segments: 415 --------------------------------
-segLabel[0]: 0 cells
-segLabel[14]: 0 cells
-segLabel[16]: 0 cells
-segLabel[17]: 0 cells
-segLabel[25]: 0 cells
-segLabel[82]: 0 cells
-segLabel[93]: 0 cells
-segLabel[95]: 0 cells
-segLabel[117]: 0 cells
-segLabel[118]: 0 cells
-segLabel[132]: 0 cells
-segLabel[137]: 0 cells
-segLabel[139]: 0 cells
-segLabel[146]: 0 cells
-segLabel[151]: 0 cells
-segLabel[152]: 0 cells
-segLabel[159]: 0 cells
-segLabel[165]: 0 cells
-segLabel[186]: 0 cells
-segLabel[195]: 0 cells
-segLabel[202]: 0 cells
-segLabel[208]: 0 cells
-segLabel[213]: 0 cells
-segLabel[215]: 0 cells
-segLabel[221]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 818, maxLabel: 415, emptySegmentsCount: 24
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 391, emptySegments( segmentsCombine() ): 31
-segLabel[2] should be 0 cells, but it has:2cells, corresponding to segLabel[1
-segLabel[14] should be 0 cells, but it has:0cells, corresponding to segLabel[13
-segLabel[25] should be 0 cells, but it has:0cells, corresponding to segLabel[24
-segLabel[47] should be 0 cells, but it has:3cells, corresponding to segLabel[46
-segLabel[95] should be 0 cells, but it has:0cells, corresponding to segLabel[81
-segLabel[93] should be 0 cells, but it has:0cells, corresponding to segLabel[89
-segLabel[118] should be 0 cells, but it has:0cells, corresponding to segLabel[115
-segLabel[132] should be 0 cells, but it has:0cells, corresponding to segLabel[128
-segLabel[139] should be 0 cells, but it has:0cells, corresponding to segLabel[124
-segLabel[137] should be 0 cells, but it has:0cells, corresponding to segLabel[128
-segLabel[144] should be 0 cells, but it has:2cells, corresponding to segLabel[124
-segLabel[146] should be 0 cells, but it has:0cells, corresponding to segLabel[141
-segLabel[151] should be 0 cells, but it has:0cells, corresponding to segLabel[124
-segLabel[152] should be 0 cells, but it has:0cells, corresponding to segLabel[145
-segLabel[159] should be 0 cells, but it has:0cells, corresponding to segLabel[158
-segLabel[165] should be 0 cells, but it has:0cells, corresponding to segLabel[161
-segLabel[186] should be 0 cells, but it has:0cells, corresponding to segLabel[185
-segLabel[195] should be 0 cells, but it has:0cells, corresponding to segLabel[189
-segLabel[202] should be 0 cells, but it has:0cells, corresponding to segLabel[199
-segLabel[215] should be 0 cells, but it has:0cells, corresponding to segLabel[199
-segLabel[208] should be 0 cells, but it has:0cells, corresponding to segLabel[199
-segLabel[213] should be 0 cells, but it has:0cells, corresponding to segLabel[212
-segLabel[221] should be 0 cells, but it has:0cells, corresponding to segLabel[219
-segLabel[17] should be 0 cells, but it has:0cells, corresponding to segLabel[15
-segLabel[17] should be 0 cells, but it has:0cells, corresponding to segLabel[16
-segLabel[17] should be 0 cells, but it has:0cells, corresponding to segLabel[16
-segLabel[16] should be 0 cells, but it has:0cells, corresponding to segLabel[15
-segLabel[25] should be 0 cells, but it has:0cells, corresponding to segLabel[24
-segLabel[82] should be 0 cells, but it has:0cells, corresponding to segLabel[81
-segLabel[117] should be 0 cells, but it has:0cells, corresponding to segLabel[115
-segLabel[144] should be 0 cells, but it has:2cells, corresponding to segLabel[142
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 17   Number of Segments: 410 --------------------------------
-segLabel[0]: 0 cells
-segLabel[12]: 0 cells
-segLabel[24]: 0 cells
-segLabel[25]: 0 cells
-segLabel[30]: 0 cells
-segLabel[85]: 0 cells
-segLabel[86]: 0 cells
-segLabel[107]: 0 cells
-segLabel[123]: 0 cells
-segLabel[131]: 0 cells
-segLabel[143]: 0 cells
-segLabel[145]: 0 cells
-segLabel[158]: 0 cells
-segLabel[165]: 0 cells
-segLabel[178]: 0 cells
-segLabel[197]: 0 cells
-segLabel[199]: 0 cells
-segLabel[212]: 0 cells
-segLabel[223]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 814, maxLabel: 410, emptySegmentsCount: 18
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 392, emptySegments( segmentsCombine() ): 24
-segLabel[2] should be 0 cells, but it has:2cells, corresponding to segLabel[1
-segLabel[12] should be 0 cells, but it has:0cells, corresponding to segLabel[11
-segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
-segLabel[85] should be 0 cells, but it has:0cells, corresponding to segLabel[78
-segLabel[123] should be 0 cells, but it has:0cells, corresponding to segLabel[122
-segLabel[124] should be 0 cells, but it has:1cells, corresponding to segLabel[121
-segLabel[131] should be 0 cells, but it has:0cells, corresponding to segLabel[127
-segLabel[133] should be 0 cells, but it has:1cells, corresponding to segLabel[121
-segLabel[143] should be 0 cells, but it has:0cells, corresponding to segLabel[139
-segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[142
-segLabel[158] should be 0 cells, but it has:0cells, corresponding to segLabel[157
-segLabel[165] should be 0 cells, but it has:0cells, corresponding to segLabel[139
-segLabel[178] should be 0 cells, but it has:0cells, corresponding to segLabel[139
-segLabel[197] should be 0 cells, but it has:0cells, corresponding to segLabel[189
-segLabel[199] should be 0 cells, but it has:0cells, corresponding to segLabel[189
-segLabel[212] should be 0 cells, but it has:0cells, corresponding to segLabel[189
-segLabel[223] should be 0 cells, but it has:0cells, corresponding to segLabel[222
-segLabel[25] should be 0 cells, but it has:0cells, corresponding to segLabel[23
-segLabel[25] should be 0 cells, but it has:0cells, corresponding to segLabel[24
-segLabel[25] should be 0 cells, but it has:0cells, corresponding to segLabel[24
-segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
-segLabel[30] should be 0 cells, but it has:0cells, corresponding to segLabel[29
-segLabel[86] should be 0 cells, but it has:0cells, corresponding to segLabel[83
-segLabel[107] should be 0 cells, but it has:0cells, corresponding to segLabel[105
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 18   Number of Segments: 411 --------------------------------
-segLabel[0]: 0 cells
-segLabel[2]: 0 cells
-segLabel[17]: 0 cells
-segLabel[18]: 0 cells
-segLabel[24]: 0 cells
-segLabel[33]: 0 cells
-segLabel[48]: 0 cells
-segLabel[51]: 0 cells
-segLabel[54]: 0 cells
-segLabel[136]: 0 cells
-segLabel[140]: 0 cells
-segLabel[145]: 0 cells
-segLabel[151]: 0 cells
-segLabel[152]: 0 cells
-segLabel[156]: 0 cells
-segLabel[161]: 0 cells
-segLabel[164]: 0 cells
-segLabel[184]: 0 cells
-segLabel[189]: 0 cells
-segLabel[196]: 0 cells
-segLabel[206]: 0 cells
-segLabel[214]: 0 cells
-segLabel[250]: 0 cells
-segLabel[254]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 839, maxLabel: 411, emptySegmentsCount: 23
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 388, emptySegments( segmentsCombine() ): 32
-segLabel[2] should be 0 cells, but it has:0cells, corresponding to segLabel[1
-segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
-segLabel[26] should be 0 cells, but it has:1cells, corresponding to segLabel[25
-segLabel[33] should be 0 cells, but it has:0cells, corresponding to segLabel[32
-segLabel[48] should be 0 cells, but it has:0cells, corresponding to segLabel[47
-segLabel[51] should be 0 cells, but it has:0cells, corresponding to segLabel[47
-segLabel[52] should be 0 cells, but it has:1cells, corresponding to segLabel[50
-segLabel[54] should be 0 cells, but it has:0cells, corresponding to segLabel[53
-segLabel[131] should be 0 cells, but it has:1cells, corresponding to segLabel[126
-segLabel[136] should be 0 cells, but it has:0cells, corresponding to segLabel[128
-segLabel[135] should be 0 cells, but it has:1cells, corresponding to segLabel[126
-segLabel[140] should be 0 cells, but it has:0cells, corresponding to segLabel[128
-segLabel[144] should be 0 cells, but it has:1cells, corresponding to segLabel[128
-segLabel[145] should be 0 cells, but it has:0cells, corresponding to segLabel[137
-segLabel[151] should be 0 cells, but it has:0cells, corresponding to segLabel[150
-segLabel[152] should be 0 cells, but it has:0cells, corresponding to segLabel[138
-segLabel[156] should be 0 cells, but it has:0cells, corresponding to segLabel[138
-segLabel[161] should be 0 cells, but it has:0cells, corresponding to segLabel[158
-segLabel[164] should be 0 cells, but it has:0cells, corresponding to segLabel[163
-segLabel[184] should be 0 cells, but it has:0cells, corresponding to segLabel[183
-segLabel[189] should be 0 cells, but it has:0cells, corresponding to segLabel[183
-segLabel[196] should be 0 cells, but it has:0cells, corresponding to segLabel[193
-segLabel[206] should be 0 cells, but it has:0cells, corresponding to segLabel[193
-segLabel[214] should be 0 cells, but it has:0cells, corresponding to segLabel[211
-segLabel[250] should be 0 cells, but it has:0cells, corresponding to segLabel[249
-segLabel[254] should be 0 cells, but it has:0cells, corresponding to segLabel[252
-segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[16
-segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
-segLabel[18] should be 0 cells, but it has:0cells, corresponding to segLabel[17
-segLabel[17] should be 0 cells, but it has:0cells, corresponding to segLabel[16
-segLabel[24] should be 0 cells, but it has:0cells, corresponding to segLabel[23
-segLabel[120] should be 0 cells, but it has:1cells, corresponding to segLabel[119
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-[Segm_segLabel_]: 19   Number of Segments: 407 --------------------------------
-segLabel[0]: 0 cells
-segLabel[2]: 0 cells
-segLabel[19]: 0 cells
-segLabel[27]: 0 cells
-segLabel[28]: 0 cells
-segLabel[32]: 0 cells
-segLabel[72]: 0 cells
-segLabel[81]: 0 cells
-segLabel[104]: 0 cells
-segLabel[130]: 0 cells
-segLabel[136]: 0 cells
-segLabel[144]: 0 cells
-segLabel[169]: 0 cells
-segLabel[202]: 0 cells
-segLabel[204]: 0 cells
-segLabel[210]: 0 cells
-segLabel[217]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 807, maxLabel: 407, emptySegmentsCount: 16
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): 391, emptySegments( segmentsCombine() ): 21
-segLabel[2] should be 0 cells, but it has:0cells, corresponding to segLabel[1
-segLabel[19] should be 0 cells, but it has:0cells, corresponding to segLabel[18
-segLabel[81] should be 0 cells, but it has:0cells, corresponding to segLabel[72
-segLabel[130] should be 0 cells, but it has:0cells, corresponding to segLabel[125
-segLabel[136] should be 0 cells, but it has:0cells, corresponding to segLabel[131
-segLabel[144] should be 0 cells, but it has:0cells, corresponding to segLabel[125
-segLabel[147] should be 0 cells, but it has:2cells, corresponding to segLabel[139
-segLabel[169] should be 0 cells, but it has:0cells, corresponding to segLabel[148
-segLabel[202] should be 0 cells, but it has:0cells, corresponding to segLabel[195
-segLabel[210] should be 0 cells, but it has:0cells, corresponding to segLabel[207
-segLabel[204] should be 0 cells, but it has:0cells, corresponding to segLabel[195
-segLabel[217] should be 0 cells, but it has:0cells, corresponding to segLabel[213
-segLabel[28] should be 0 cells, but it has:0cells, corresponding to segLabel[26
-segLabel[28] should be 0 cells, but it has:0cells, corresponding to segLabel[27
-segLabel[28] should be 0 cells, but it has:0cells, corresponding to segLabel[27
-segLabel[27] should be 0 cells, but it has:0cells, corresponding to segLabel[26
-segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
-segLabel[32] should be 0 cells, but it has:0cells, corresponding to segLabel[31
-segLabel[72] should be 0 cells, but it has:0cells, corresponding to segLabel[71
-segLabel[86] should be 0 cells, but it has:1cells, corresponding to segLabel[85
-segLabel[104] should be 0 cells, but it has:0cells, corresponding to segLabel[102
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
 !*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!

@@ -3,13 +3,14 @@
 #include <iomanip>
 
 
-CCS::CCS()
+CCS::CCS()//:boundaryMIN_()
 {
     //***initialization variables
     mapSize_m_=100;                                // side length of the map (m)
     cellSize_m_ =0.25;                             // side length of the cell (m)
     CCSWay_ =8;                                    // 4: 4-way; 8: 8-way
     maxLabel =0;                                   // number of segments
+    emptySegments=0;
 
     Debug_ScanPoints_ =true;
 
@@ -23,28 +24,77 @@ CCS::CCS()
     tempScrollingByteMap_ = ScrollingByteMap(mapSize_m_, cellSize_m_, true, 0);
     tempScrollingByteMap_.setUseShallowCopy();
 
-    recordSBM_ = ScrollingByteMap(mapSize_m_, cellSize_m_, true, 0);
-    recordSBM_.setUseShallowCopy();
-
     //***Initialize vector array
-    segLabel = vector< vector<RecPoint3D> >(MAXSEGMENTS);
+    segLabel = vector< vector<RecPoint3D> >(MAXSEGMENTS+1);
+    segLabel.clear();
+    for (int i=1; i<=MAXSEGMENTS; ++i)
+        segLabel[i].reserve(MAXCELLSINMAP/10);
+
+}
+
+
+void CCS::parametersReset()
+{
+    //*** clear segments label
+    for(int i=0; i<=maxLabel; ++i)  // segLabel[0] has Nothing!
+        segLabel[i].clear();
+
+//    segLabel.clear();
+    maxLabel=0;
+    emptySegments=0;
+
+    //*** clear cellCentrePoints Set
+    sourceSet.clear();
+
+    //*** reset maps' cell value!!!
+    tempScrollingByteMap_.clear();
+}
+
+
+void CCS::centerMap(const char* filename)
+{
+    ifstream Ain(filename, ios::in);
+    if (!Ain.is_open()) throw FAILOPENVEHICLEPOSEFILE;
+
+    int i;
+    string str;
+    RecPoint2D p;
+
+    //*** Read 5 lines first
+    for (i=0; i<5; ++i)  //
+        getline(Ain, str);
+
+    //*** Then, begin reading points
+    getline(Ain, str, '\t');
+    p.x=atof(str.c_str());
+    getline(Ain, str, '\n');
+    p.y=atof(str.c_str());
+//    cout << fixed << setprecision(4) << p.x << "\t"<< p.y<<endl;
+
+    //*** Touch corners to get the segmentationMap_/tempScrollingByteMap_ centered on the vehiclePose.
+    segmentationMap_.centerAt(p);
+    tempScrollingByteMap_.centerAt(p);
+//    boundaryMIN_=tempScrollingByteMap_.getBounds().getMinPoint();
+//    cout << fixed << setprecision(4) << boundaryMIN_.x << "\t"<< boundaryMIN_.y << endl; //Check with Segm_mapBoundary_.txt
+
+    Ain.close();
 }
 
 
 void CCS::createSourceSet(const char* filename)
 {
     ifstream Ain(filename, ios::in);
-    if (!Ain.is_open()) throw FAILOPENSOURCEFILE;
+    if (!Ain.is_open()) throw FAILOPENSOURCESETFILE;
 
     int i;
     string str;
     RecPoint3D p;
 
-    // read 2 lines first
-    for (i=0; i<6; ++i)  // 
+    //*** Read 4 lines first
+    for (i=0; i<4; ++i)  //
         getline(Ain, str);
 
-    // then, begin reading points
+    //*** Then, begin reading points
     while (1)
     {
         getline(Ain, str, '\t');
@@ -55,7 +105,6 @@ void CCS::createSourceSet(const char* filename)
         p.z=atof(str.c_str());
 
         sourceSet.insert(p);
-        setCellValue(recordSBM_, p, 255);
         setCellValue(tempScrollingByteMap_, p, 255);
     }
 
@@ -84,289 +133,181 @@ void CCS::setCellValue(ScrollingByteMap & map, const RecPoint3D & pt, const int 
 }
 
 
-void CCS::parametersReset()
+void CCS::cellSweepSegment()
 {
-    sourceSet.clear();
-
-    for(int i=0; i<=maxLabel; ++i)  // segLabel[0] has Nothing!
-        segLabel[i].clear();
-
-    segLabel.clear();
-    maxLabel=0;
-
-    // reset maps' cell value!!!
-    tempScrollingByteMap_.clear();
-    recordSBM_.clear();
-}
-
-
-void CCS::generateSegmentationMap()
-{
-    //Segmentation
-    connectedComponentSearch();
-
-/*
-    if (Debug_ScanPoints_)
-    {
-        LogSegLabelCheck(tempScrollingByteMap_);
-    }
-*/
-
-    //Set cell value according to the info from Segmentation
-//    setMapValue();
-
-
-/*
-    //Publish:
-    segmentationMap_.clearByTime();
-    segmentationMapOutput_->publish(segmentationMap_.getDataMap());
-    logger_.log_debug("segmentationMap_ Publish.");
-*/
-}
-
-
-void CCS::connectedComponentSearch()
-{
-    //*** find boundary of the map
-//    tempScrollingByteMap_ = segmentationMap_.getDataMap();
-//    RecAxisAlignedBox2D MapBoundary_ = tempScrollingByteMap_.getBounds();
-//    RecPoint2D boundaryMIN_ = MapBoundary_.getMinPoint();
-    RecPoint2D boundaryMIN_(4473885.0000, 589388.2500);
-
-//    if (Debug_ScanPoints_)
-//    {
-//        LogMapBoundaryCheck(boundaryMIN_);
-//    }
-
-    //*** algorithm
+    //*** variable setup
     RecPoint3D leftPT, downPT, leftdownPT, rightdownPT;
     bool leftState(false), downState(false), leftdownState(false), rightdownState(false);
-    short boundaryState=0; // 0: not boundary; 1: only bottom; 2: only leftside 3: only rightside
-    int loopCounts=0;      // record looptimes
-    bool isValid(false);   // hsbm.get(..., isValid) -> both isSpaceValid and isTimeValid (include checkTimeStamp(time, lifetime_) )
-                           // dataMap_.get(..., isValid)->isSpaceValid
-                           // timeMap_.get(..., isValid)->isTimeValid (not include checkTimeStamp(time, lifetime_) )
 
-    for(set<RecPoint3D, ltpt3D>::const_iterator ii=sourceSet.begin();
-        ii != sourceSet.end();
-        ++ii)
+    //*** check whether the source set is empty
+    if (!sourceSet.size())
     {
-        loopCounts++;     // record point number
-        boundaryState=0;  // reset for every point
+        //if (Debug_ScanPoints_)
+        //    LogSegLabelCheck(0); // Even ibeoSet is empty, we still want to log info into txt files, for timeStamp synchronization
 
-        downPT.x = (*ii).x - cellSize_m_;      downPT.y = (*ii).y;
+        return;
+    }
+
+    //*** algorithm
+    for(set<RecPoint3D, ltpt3D>::const_iterator ii=sourceSet.begin(); ii != sourceSet.end(); ++ii)
+    {
+        // generate leftPT, downPT, leftdownPT and rightdownPT
         leftPT.x = (*ii).x;                    leftPT.y = (*ii).y - cellSize_m_;
+        downPT.x = (*ii).x - cellSize_m_;      downPT.y = (*ii).y;
         leftdownPT.x  = (*ii).x - cellSize_m_; leftdownPT.y  = (*ii).y - cellSize_m_;
         rightdownPT.x = (*ii).x - cellSize_m_; rightdownPT.y = (*ii).y + cellSize_m_;
 
-        if (loopCounts == 1)  // look at the first point in the set
+        // check left
+        leftState = neighbourCheck(leftPT);
+        if (leftState)
+            setWithoutCombineCheck(*ii, leftPT);
+
+        // check down
+        downState = neighbourCheck(downPT);
+        if (downState)
         {
-            if ( downPT.x < boundaryMIN_.x && leftPT.y < boundaryMIN_.y )  // this is in the leftbottom corner!
-            {
-                createNewSegment(*ii, isValid);
-                continue;
-            }
-        }
-
-        if ( downPT.x < boundaryMIN_.x )       // (*ii) is at the bottom
-            boundaryState=1;
-        else if ( leftPT.y < boundaryMIN_.y )  // (*ii) is at the leftside
-            boundaryState=2;
-        else if ( rightdownPT.y > (boundaryMIN_.y + mapSize_m_)) // (*ii) is at the rightside
-            boundaryState=3;
-
-
-        if (boundaryState==0)
-        {
-            // check left
-            leftState = neighbourCheck(leftPT, isValid);
-            if (leftState)
-                setWithoutCombineCheck(*ii, leftPT, isValid);
-
-            // check down
-            downState = neighbourCheck(downPT, isValid);
-            if (downState)
-            {
-                if (!leftState)
-                    setWithoutCombineCheck(*ii, downPT, isValid);
-                else
-                    setWithCombineCheck(leftPT, downPT, isValid);
-            }
-
-            // whether ckeck leftdown corner and rightdown corner
-            if (CCSWay_ == 8)
-            {
-                // check leftdown
-                leftdownState = neighbourCheck(leftdownPT, isValid);
-                if (leftdownState)
-                {
-                    if (!leftState && !downState)  // left cell and down cell are all empty
-                        setWithoutCombineCheck(*ii, leftdownPT, isValid);
-                }
-
-                // check rightdown
-                rightdownState = neighbourCheck(rightdownPT, isValid);
-                if ( (boundaryState != 3) && rightdownState ) // not at the rightside
-                {
-                    if (!downState)
-                    {
-                        // left and leftdown, at least one cell is occupied, we should segmentsCombine()
-                        if (leftState)
-                            setWithCombineCheck(leftPT, rightdownPT, isValid);
-                        else if (leftdownState)
-                            setWithCombineCheck(leftdownPT, rightdownPT, isValid);
-                        else
-                            setWithoutCombineCheck(*ii, rightdownPT, isValid);
-                    }
-                }
-
-                if (!leftState && !downState && !leftdownState && !rightdownState)
-                    createNewSegment(*ii, isValid);
-
-                continue;
-            }  // if (CCSWay_ == 8)
-
-            // if it goes here, indicate: CCSWay_ != 8
-            if (!leftState && !downState)
-                createNewSegment(*ii, isValid);
-        }
-        else if (boundaryState==1)  //only bottom//
-        {
-            // only check left
-            leftState = neighbourCheck(leftPT, isValid);
-            if (leftState)
-                setWithoutCombineCheck(*ii, leftPT, isValid);
+            if (!leftState)
+                setWithoutCombineCheck(*ii, downPT);
             else
-                createNewSegment(*ii, isValid);
+                setWithCombineCheck(leftPT, downPT);
         }
-        else if (boundaryState==2)  //only leftside//
+
+        // whether ckeck leftdown corner and rightdown corner
+        if (CCSWay_ == 8)
         {
-            // only check down
-            downState = neighbourCheck(downPT, isValid);
-            if (downState)
-                setWithoutCombineCheck(*ii, downPT, isValid);
-
-            // whether ckeck rightdown corner
-            if (CCSWay_ ==8)
+            // check leftdown
+            leftdownState = neighbourCheck(leftdownPT);
+            if (leftdownState)
             {
-                // check rightdown
-                rightdownState = neighbourCheck(rightdownPT, isValid);
-                if (rightdownState)
-                {
-                    if (!downState)
-                        setWithoutCombineCheck(*ii, rightdownPT, isValid);
-                }
-                else
-                {
-                    if (!downState)
-                        createNewSegment(*ii, isValid);
-                }
-
-                continue;
+                if (!leftState && !downState)  // left cell and down cell are all empty
+                    setWithoutCombineCheck(*ii, leftdownPT);
             }
 
-            // if it goes here, indicate: CCSWay_ != 8
-            if (!downState)
-                createNewSegment(*ii, isValid);
-        }
-        else  // shouldn't go here
-        {
-//            logger_.log_warn("Exception! point boundaryState: %f, %f; loopCounts:%d, point.x:%f, point.y:%f",
-//                             boundaryMIN_.x, boundaryMIN_.y, loopCounts, (*ii).x, (*ii).y);
-            throw POINTBOUNDARYSTATEERROR;
-        }
+            // check rightdown
+            rightdownState = neighbourCheck(rightdownPT);
+            if (rightdownState)
+            {
+                if (!downState)
+                {
+                    // left and leftdown, at least one cell is occupied, we should segmentsCombine()
+                    if (leftState)
+                        setWithCombineCheck(leftPT, rightdownPT);
+                    else if (leftdownState)
+                        setWithCombineCheck(leftdownPT, rightdownPT);
+                    else
+                        setWithoutCombineCheck(*ii, rightdownPT);
+                }
+            }
+
+            if (!leftState && !downState && !leftdownState && !rightdownState)
+                createNewSegment(*ii);
+
+            continue;
+        }  // if (CCSWay_ == 8)
+
+
+        // if it goes here, indicate: CCSWay_ != 8
+        if (!leftState && !downState)
+            createNewSegment(*ii);
 
     } //for(set<RecPoint3D, ltpt3D>::const_iterator ...)
 
 
     //*** eliminate 0 size segments
+    /*** We must run EITHER one of these two (running them both is WRONG!) ***/
 //    segLabelAdjust();
-
+//    createPointsSegmentsFromCells();
 }
 
 
 /* Check whether the neighbour cell is occupied   */
-bool CCS::neighbourCheck(const RecPoint3D & dstPT, bool & isValid)
+bool CCS::neighbourCheck(const RecPoint3D & dstPT)
 {
-    //return ( (int)recordHSBM_.get(dstPT, isValid) == 255 && isValid );  // occupied && valid
-    return ( (int)recordSBM_.get(dstPT, isValid) == 255 && isValid );  // occupied && valid
+    bool isValid = false;   // hsbm.get(..., isValid) -> both isSpaceValid and isTimeValid (include checkTimeStamp(time, lifetime_) )
+                            // dataMap_.get(..., isValid)->isSpaceValid
+                            // timeMap_.get(..., isValid)->isTimeValid (not include checkTimeStamp(time, lifetime_) )
+    return ( (int)tempScrollingByteMap_.get(dstPT, isValid) && isValid );  // occupied && spaceValid
 }
 
 
 /* Get the cell's label  */
-int CCS::labelGet(const RecPoint3D & dstPT, bool & isValid)
+int CCS::labelGet(const RecPoint3D & dstPT)
 {
+    bool isValid = false;
     return (int)tempScrollingByteMap_.get(dstPT, isValid);
 }
 
 
 /* Set the cell with the label the same as neighbour's  */
-void CCS::labelSet(const RecPoint3D & dstPT, const int & value, bool & isValid)
+void CCS::labelSet(const RecPoint3D & dstPT, const int & value)
 {
     setCellValue(tempScrollingByteMap_, dstPT, value);
 }
 
 
 /* Comebine 2 segments  */
-void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax, bool & isValid)
+void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax)
 {
     for(vector<RecPoint3D>::const_iterator itr = segLabel[segLabelMax].begin();
         itr != segLabel[segLabelMax].end();
         ++itr)
     {
-        labelSet(*itr, segLabelMin, isValid);
+        labelSet(*itr, segLabelMin);
         segLabel[segLabelMin].push_back(*itr);
+
+//        if ( labelGet(*itr) != segLabelMin )
+//            cout << "labelSet() FAILED in segmentsCombine()! point's label is: " << labelGet(*itr) << endl;
     }
 
 
     segLabel[segLabelMax].clear();  // delete the big-label segment
-    //cout << "The clear one is segLabelMax: " <<segLabelMax << "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<endl;
-
+    //cout << "The clear one is segLabelMax: " <<segLabelMax << "&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<endl;
+    emptySegments++;
+    emptySegments_[emptySegments] = segLabelMax;
+    minLabelSegments_[emptySegments] = segLabelMin;
 }
 
 
 /* Simply set the cell label  */
-void CCS::setWithoutCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT, bool & isValid)
+void CCS::setWithoutCombineCheck(const RecPoint3D & operPT, const RecPoint3D & infoPT)
 {
-    int tempLabel = labelGet(infoPT, isValid);
-    labelSet(operPT, tempLabel, isValid);
+    int tempLabel = labelGet(infoPT);
+    labelSet(operPT, tempLabel);
     segLabel[tempLabel].push_back(operPT);
 }
 
 
 /* Set the cell label and Check combine  */
-void CCS::setWithCombineCheck(const RecPoint3D & infoPT1, const RecPoint3D & infoPT2, bool & isValid)
+void CCS::setWithCombineCheck(const RecPoint3D & infoPT1, const RecPoint3D & infoPT2)
 {
-    int LabelPT1 = labelGet(infoPT1, isValid);
-    int LabelPT2 = labelGet(infoPT2, isValid);
-    int Labelmin = min(LabelPT1, LabelPT2);
-//    labelSet(operPT, tempLabel, isValid);
-//    segLabel[tempLabel].push_back(operPT);
+    int LabelPT1 = labelGet(infoPT1);
+    int LabelPT2 = labelGet(infoPT2);
+    //if (!LabelPT1 || !LabelPT2) cout << 'fing 0 Label from tempScrollingByteMap_' << endl;
 
+    int Labelmin = min(LabelPT1, LabelPT2);
     int Labelmax = max(LabelPT1, LabelPT2);
     if ( Labelmin != Labelmax )  // two segments should combine!
-    {
-        //LogSegCombineCheck(operPT, );
-
-        segmentsCombine(Labelmin, Labelmax, isValid);
-        //LogSegCombineCheck(operPT);
-    }
+        segmentsCombine(Labelmin, Labelmax);
 }
 
 
 /* Create a New Segment  */
-void CCS::createNewSegment(const RecPoint3D & dstPT, bool & isValid)
+void CCS::createNewSegment(const RecPoint3D & dstPT)
 {
     maxLabel++;
-    labelSet(dstPT, maxLabel, isValid);
+    labelSet(dstPT, maxLabel);
     segLabel[maxLabel].push_back(dstPT);
 }
 
+
 /* Adjust the segLabel, eliminate 0 size segments */
-void CCS::segLabelAdjust()
+/*void CCS::segLabelAdjust()
 {
     int adjustTimes=0, firstZeroLabel=0;
-    bool isValid(false);
+
+    ////////////////////////////////////////////////////////////////////////////
+    int temp=maxLabel;
+    ////////////////////////////////////////////////////////////////////////////
 
     // adjust the label
     for (int i=1; i<=maxLabel; ++i)
@@ -392,6 +333,12 @@ void CCS::segLabelAdjust()
 
     //cout << adjustTimes << " adjustments have been done!" << endl;
 
+    ////////////////////////////////////////////////////////////////////////////
+    if (Debug_ScanPoints_)
+        LogSegLabelAdjustCheck(adjustTimes, temp);
+    ////////////////////////////////////////////////////////////////////////////
+
+
     // adjust the corresponding cell values
     for (int i=maxLabel; i>=firstZeroLabel; --i)
     {
@@ -399,11 +346,11 @@ void CCS::segLabelAdjust()
              jj != segLabel[i].end();
              ++jj)
         {
-            labelSet(*jj, i, isValid);
+            labelSet(*jj, i);
         }
     }
 
-}
+}*/
 
 
 
@@ -411,46 +358,69 @@ void CCS::segLabelAdjust()
 void CCS::printSegLabel()
 {
     bool isTimeValid = false;
-    int cellCounts=0, temp=0;
+    int cellCounts=0, temp=0, emptySegmentsCount=0;
     static int Times_printSegLabel=1;
 
     ofstream Eout;
     Eout.open("SegLabel_Check.txt", ios::out|ios::trunc);
-    if ( Eout.is_open() )
-    {
-        //logger_.log_warn("Open Segm_segLabel_.txt successfully!");
-
-        Eout << "[Segm_segLabel_]: " << Times_printSegLabel << "   Number of Segments: " << maxLabel << " --------------------------------" <<endl;
-        for (int i=0; i<=maxLabel; ++i)  // segLabel[0] is not a segment, but we still want to output it
-        {
-            temp = segLabel[i].size();
-
-            Eout << "segLabel[" << i << "]: " <<  temp << " cells" << " =====================================" << endl;
-            if (!temp)
-            {
-                Eout << "XXXXXXXXXX" << endl;
-            }
-            else
-            {
-                for (vector<RecPoint3D>::const_iterator itr=segLabel[i].begin(); itr != segLabel[i].end(); ++itr)
-                {
-                    Eout << fixed << setprecision(4) << itr->x << "	" << itr->y << "	" << itr->z << " "
-                         << "cellValue: " << (int)tempScrollingByteMap_.get(*itr, isTimeValid)
-                         << endl;   ///////////////////////////////////
-                }
-            }
-            Eout << "==========================================================" << endl;
-
-            cellCounts += temp;
-        }
-        Eout << "---------------------------------------------------- The above total cells: " << cellCounts <<endl;
-
-        Eout.close();
-    }
-    else
-    {
+    if ( !Eout.is_open() )
         throw FAILOPENSEGLABELCHECKFILE;
+
+    Eout << "[Segm_segLabel_]: " << Times_printSegLabel << "   Number of Segments: " << maxLabel << " --------------------------------" <<endl;
+    for (int i=0; i<=maxLabel; ++i)  // segLabel[0] is not a segment, but we still want to output it
+    {
+        if ( (temp = segLabel[i].size()) == 0 )
+        {
+            if (i)  // not count segLabel[0]
+                emptySegmentsCount++;
+
+            Eout << "segLabel[" << i << "]: " <<  temp << " cells" << endl;
+        }
+
+/*
+        Eout << "segLabel[" << i << "]: " <<  temp << " cells" << " =====================================" << endl;
+        if (!temp)
+        {
+            Eout << "XXXXXXXXXX" << endl;
+        }
+        else
+        {
+            for (vector<RecPoint3D>::const_iterator itr=segLabel[i].begin(); itr != segLabel[i].end(); ++itr)
+            {
+                Eout << fixed << setprecision(4) << itr->x << "	" << itr->y << "	" << itr->z << " "
+                     << "cellValue: " << (int)tempScrollingByteMap_.get(*itr, isTimeValid)
+                     << endl;   ///////////////////////////////////
+            }
+        }
+        Eout << "==========================================================" << endl;
+*/
+        cellCounts += temp;
     }
+    Eout << ":::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: " << cellCounts
+         << ", maxLabel: " << maxLabel
+         << ", emptySegmentsCount: " << emptySegmentsCount
+         << endl;
+
+    Eout << "::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): " << "---"
+         << ", emptySegments( segmentsCombine() ): " << emptySegments
+         << endl;
+
+    for (int i=1; i<=emptySegments; ++i)
+    {
+        Eout << "segLabel[" << emptySegments_[i] << "] should be 0 cells, but it has:" << segLabel[emptySegments_[i]].size() << "cells"
+             << ", corresponding to segLabel[" << minLabelSegments_[i] //<< "]: " << segLabel[minLabelSegments_[i]].size() << "cells"
+             << endl;
+    }
+
+    if ( emptySegmentsCount != emptySegments )
+    {
+        Eout << "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!" << endl
+             << "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!" << endl
+             << "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!" << endl;
+    }
+
+    Eout.close();
+
 
     Times_printSegLabel++;
 }
