@@ -28,7 +28,7 @@ CCS::CCS()//:boundaryMIN_()
     segLabel = vector< vector<RecPoint3D> >(MAXSEGMENTS+1);
     segLabel.clear();
     for (int i=1; i<=MAXSEGMENTS; ++i)
-        segLabel[i].reserve(MAXCELLSINMAP/10);
+        segLabel[i].reserve(1000);//MAXCELLSINMAP/10);
 
 }
 
@@ -248,23 +248,29 @@ void CCS::labelSet(const RecPoint3D & dstPT, const int & value)
 /* Comebine 2 segments  */
 void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax)
 {
+    cout << "segLabelMax: " << segLabelMax << "-------------------------" << endl;
+
     for(vector<RecPoint3D>::const_iterator itr = segLabel[segLabelMax].begin();
         itr != segLabel[segLabelMax].end();
         ++itr)
     {
+        cout << fixed << setprecision(4) << itr->x << "," << itr->y << "," << itr->z << endl;
+
+
         labelSet(*itr, segLabelMin);
         segLabel[segLabelMin].push_back(*itr);
 
-//        if ( labelGet(*itr) != segLabelMin )
-//            cout << "labelSet() FAILED in segmentsCombine()! point's label is: " << labelGet(*itr) << endl;
+        if ( labelGet(*itr) != segLabelMin )
+            cout << "labelSet() FAILED in segmentsCombine()! point's label is: " << labelGet(*itr) << endl;
     }
 
+    cout << "==============================================" << endl;
 
     segLabel[segLabelMax].clear();  // delete the big-label segment
     //cout << "The clear one is segLabelMax: " <<segLabelMax << "&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<endl;
-    emptySegments++;
-    emptySegments_[emptySegments] = segLabelMax;
-    minLabelSegments_[emptySegments] = segLabelMin;
+//    emptySegments++;
+//    emptySegments_[emptySegments] = segLabelMax;
+//    minLabelSegments_[emptySegments] = segLabelMin;
 }
 
 
@@ -287,7 +293,29 @@ void CCS::setWithCombineCheck(const RecPoint3D & infoPT1, const RecPoint3D & inf
     int Labelmin = min(LabelPT1, LabelPT2);
     int Labelmax = max(LabelPT1, LabelPT2);
     if ( Labelmin != Labelmax )  // two segments should combine!
+    {
+        emptySegments++;
+
+        //*** record emptySegments' label(maxLabel), minLabel
+        emptySegments_[emptySegments] = Labelmax;
+        minLabelSegments_[emptySegments] = Labelmin;
+
+        //*** record infoPT1, infoPT2
+        infoPT1_[emptySegments]= infoPT1;
+        infoPT2_[emptySegments]= infoPT2;
+
+        //*** record label BEFORE combining
+        labelBefore1_[emptySegments]= LabelPT1;
+        labelBefore2_[emptySegments]= LabelPT2;
+
+        ////////////////////////////////
         segmentsCombine(Labelmin, Labelmax);
+        ////////////////////////////////
+
+        //*** record label AFTER combining
+        labelAfter1_[emptySegments]= labelGet(infoPT1);
+        labelAfter2_[emptySegments]= labelGet(infoPT2);
+    }
 }
 
 
@@ -407,8 +435,11 @@ void CCS::printSegLabel()
 
     for (int i=1; i<=emptySegments; ++i)
     {
-        Eout << "segLabel[" << emptySegments_[i] << "] should be 0 cells, but it has:" << segLabel[emptySegments_[i]].size() << "cells"
-             << ", corresponding to segLabel[" << minLabelSegments_[i] //<< "]: " << segLabel[minLabelSegments_[i]].size() << "cells"
+        Eout << fixed << setprecision(4)
+             << "segLabel[" << emptySegments_[i] << "] should 0 cells, but:" << segLabel[emptySegments_[i]].size() << "cells"
+             << ", mapping segLabel[" << minLabelSegments_[i] << "]: " //<< segLabel[minLabelSegments_[i]].size() << "cells"
+             << "infoPT1->(" <<infoPT1_[i].x <<","<<infoPT1_[i].y <<") Before: "<<labelBefore1_[i]<<" After:"<<labelAfter1_[i]
+             << "infoPT2->(" <<infoPT2_[i].x <<","<<infoPT2_[i].y <<") Before: "<<labelBefore2_[i]<<" After:"<<labelAfter2_[i]
              << endl;
     }
 

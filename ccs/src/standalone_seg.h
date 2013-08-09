@@ -50,6 +50,13 @@ protected:
     int emptySegments;                              // number of empty segments
     int emptySegments_[100];                        // Debug: record the emptySegments' label
     int minLabelSegments_[100];                     // Debug: record the combined minLabel Segments' label
+    RecPoint3D infoPT1_[100];                       // Debug: record the point1 when doing combine check
+    RecPoint3D infoPT2_[100];                       // Debug: record the point2 when doing combine check
+    int labelBefore1_[100];                         // Debug: record the point1's label BEFORE combining
+    int labelBefore2_[100];                         // Debug: record the point2's label BEFORE combining
+    int labelAfter1_[100];                          // Debug: record the point1's label AFTER combining
+    int labelAfter2_[100];                          // Debug: record the point2's label AFTER combining
+
 
     RecPoint2D boundaryMIN_;                        // store the boundary of the segmentationMap_/tempScrollingByteMap_
 
