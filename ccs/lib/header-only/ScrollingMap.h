@@ -240,7 +240,7 @@ protected:
 
 typedef ScrollingMap<unsigned char> ScrollingByteMap;
 typedef ScrollingMap<double> ScrollingDoubleMap;
-
+typedef ScrollingMap<short> ScrollingShortMap;
 
 #include "ScrollingMap.def.h"
 #include "ScrollingMap.def2.h"

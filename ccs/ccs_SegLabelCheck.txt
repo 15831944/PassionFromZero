@@ -1,38 +1,38 @@
-[Segm_segLabel_]: 1   Number of Segments: 426 --------------------------------
+[Segm_segLabel_]: 1   Number of Segments: 425 --------------------------------
 segLabel[0]: 0 cells
 segLabel[11]: 0 cells
-segLabel[32]: 0 cells
-segLabel[38]: 0 cells
 segLabel[72]: 0 cells
+segLabel[74]: 0 cells
+segLabel[105]: 0 cells
 segLabel[136]: 0 cells
 segLabel[150]: 0 cells
 segLabel[151]: 0 cells
+segLabel[159]: 0 cells
 segLabel[167]: 0 cells
 segLabel[195]: 0 cells
 segLabel[204]: 0 cells
 segLabel[210]: 0 cells
 segLabel[212]: 0 cells
 segLabel[249]: 0 cells
-:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 834, maxLabel: 426, emptySegmentsCount: 13
-::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): ---, emptySegments( segmentsCombine() ): 18
+segLabel[287]: 0 cells
+segLabel[293]: 0 cells
+segLabel[377]: 0 cells
+:::::::::::::::::::::::::::::::::::::::::::::::::: The above total cells: 834, maxLabel: 425, emptySegmentsCount: 17
+::::::::::::::::::::::::::::::: nonEmptySegments( createPointsSegmentsFromCells() ): ---, emptySegments( segmentsCombine() ): 17
 segLabel[11] should 0 cells, but:0cells, mapping segLabel[10]: infoPT1->(4507131.3750,575366.8750) Before: 11 After:10infoPT2->(4507131.3750,575367.3750) Before: 10 After:10
 segLabel[72] should 0 cells, but:0cells, mapping segLabel[70]: infoPT1->(4507150.3750,575397.6250) Before: 72 After:70infoPT2->(4507150.1250,575398.1250) Before: 70 After:70
-segLabel[74] should 0 cells, but:1cells, mapping segLabel[73]: infoPT1->(4507150.6250,575392.1250) Before: 73 After:73infoPT2->(4507150.6250,575392.6250) Before: 74 After:73
-segLabel[105] should 0 cells, but:1cells, mapping segLabel[104]: infoPT1->(4507155.1250,575348.3750) Before: 104 After:104infoPT2->(4507155.1250,575348.8750) Before: 105 After:104
+segLabel[74] should 0 cells, but:0cells, mapping segLabel[73]: infoPT1->(4507150.6250,575392.1250) Before: 73 After:73infoPT2->(4507150.6250,575392.6250) Before: 74 After:73
+segLabel[105] should 0 cells, but:0cells, mapping segLabel[104]: infoPT1->(4507155.1250,575348.3750) Before: 104 After:104infoPT2->(4507155.1250,575348.8750) Before: 105 After:104
 segLabel[136] should 0 cells, but:0cells, mapping segLabel[135]: infoPT1->(4507160.1250,575422.3750) Before: 135 After:135infoPT2->(4507160.1250,575422.8750) Before: 136 After:135
 segLabel[150] should 0 cells, but:0cells, mapping segLabel[147]: infoPT1->(4507161.1250,575344.8750) Before: 150 After:147infoPT2->(4507160.8750,575345.3750) Before: 147 After:147
 segLabel[151] should 0 cells, but:0cells, mapping segLabel[141]: infoPT1->(4507161.3750,575422.1250) Before: 141 After:141infoPT2->(4507161.1250,575422.6250) Before: 151 After:141
-segLabel[159] should 0 cells, but:3cells, mapping segLabel[156]: infoPT1->(4507161.6250,575368.6250) Before: 156 After:156infoPT2->(4507161.6250,575369.1250) Before: 159 After:156
+segLabel[159] should 0 cells, but:0cells, mapping segLabel[156]: infoPT1->(4507161.6250,575368.6250) Before: 156 After:156infoPT2->(4507161.6250,575369.1250) Before: 159 After:156
 segLabel[167] should 0 cells, but:0cells, mapping segLabel[162]: infoPT1->(4507162.8750,575421.6250) Before: 167 After:162infoPT2->(4507162.8750,575422.1250) Before: 162 After:162
 segLabel[195] should 0 cells, but:0cells, mapping segLabel[162]: infoPT1->(4507165.3750,575421.1250) Before: 195 After:162infoPT2->(4507165.1250,575421.6250) Before: 162 After:162
 segLabel[204] should 0 cells, but:0cells, mapping segLabel[202]: infoPT1->(4507166.6250,575420.6250) Before: 202 After:202infoPT2->(4507166.6250,575421.1250) Before: 204 After:202
 segLabel[210] should 0 cells, but:0cells, mapping segLabel[200]: infoPT1->(4507167.6250,575339.6250) Before: 210 After:200infoPT2->(4507167.3750,575340.1250) Before: 200 After:200
 segLabel[212] should 0 cells, but:0cells, mapping segLabel[207]: infoPT1->(4507168.1250,575421.1250) Before: 207 After:207infoPT2->(4507167.8750,575421.6250) Before: 212 After:207
 segLabel[249] should 0 cells, but:0cells, mapping segLabel[242]: infoPT1->(4507171.6250,575335.6250) Before: 249 After:242infoPT2->(4507171.3750,575336.1250) Before: 242 After:242
-segLabel[32] should 0 cells, but:0cells, mapping segLabel[31]: infoPT1->(4507180.6250,575380.6250) Before: 31 After:31infoPT2->(4507180.3750,575381.1250) Before: 32 After:32
-segLabel[32] should 0 cells, but:0cells, mapping segLabel[31]: infoPT1->(4507180.6250,575380.8750) Before: 31 After:31infoPT2->(4507180.3750,575381.1250) Before: 32 After:32
-segLabel[38] should 0 cells, but:0cells, mapping segLabel[37]: infoPT1->(4507187.8750,575360.6250) Before: 37 After:37infoPT2->(4507187.6250,575361.1250) Before: 38 After:37
-segLabel[122] should 0 cells, but:3cells, mapping segLabel[121]: infoPT1->(4507217.6250,575350.3750) Before: 121 After:121infoPT2->(4507217.6250,575350.8750) Before: 122 After:122
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
-!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!
+segLabel[287] should 0 cells, but:0cells, mapping segLabel[286]: infoPT1->(4507180.6250,575380.6250) Before: 286 After:286infoPT2->(4507180.3750,575381.1250) Before: 287 After:286
+segLabel[293] should 0 cells, but:0cells, mapping segLabel[292]: infoPT1->(4507187.8750,575360.6250) Before: 292 After:292infoPT2->(4507187.6250,575361.1250) Before: 293 After:292
+segLabel[377] should 0 cells, but:0cells, mapping segLabel[376]: infoPT1->(4507217.6250,575350.3750) Before: 376 After:376infoPT2->(4507217.6250,575350.8750) Before: 377 After:376

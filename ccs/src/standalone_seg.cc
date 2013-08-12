@@ -21,8 +21,8 @@ CCS::CCS()//:boundaryMIN_()
     segmentationMap_.setLifeTime(hysteresis_s_);
     segmentationMap_.setUseShallowCopy();
 
-    tempScrollingByteMap_ = ScrollingByteMap(mapSize_m_, cellSize_m_, true, 0);
-    tempScrollingByteMap_.setUseShallowCopy();
+    scrollingShortMap_ = ScrollingShortMap(mapSize_m_, cellSize_m_, true, 0);
+    scrollingShortMap_.setUseShallowCopy();
 
     //***Initialize vector array
     segLabel = vector< vector<RecPoint3D> >(MAXSEGMENTS+1);
@@ -47,7 +47,7 @@ void CCS::parametersReset()
     sourceSet.clear();
 
     //*** reset maps' cell value!!!
-    tempScrollingByteMap_.clear();
+    scrollingShortMap_.clear();
 }
 
 
@@ -71,10 +71,10 @@ void CCS::centerMap(const char* filename)
     p.y=atof(str.c_str());
 //    cout << fixed << setprecision(4) << p.x << "\t"<< p.y<<endl;
 
-    //*** Touch corners to get the segmentationMap_/tempScrollingByteMap_ centered on the vehiclePose.
+    //*** Touch corners to get the segmentationMap_/scrollingShortMap_ centered on the vehiclePose.
     segmentationMap_.centerAt(p);
-    tempScrollingByteMap_.centerAt(p);
-//    boundaryMIN_=tempScrollingByteMap_.getBounds().getMinPoint();
+    scrollingShortMap_.centerAt(p);
+//    boundaryMIN_=scrollingShortMap_.getBounds().getMinPoint();
 //    cout << fixed << setprecision(4) << boundaryMIN_.x << "\t"<< boundaryMIN_.y << endl; //Check with Segm_mapBoundary_.txt
 
     Ain.close();
@@ -105,7 +105,7 @@ void CCS::createSourceSet(const char* filename)
         p.z=atof(str.c_str());
 
         sourceSet.insert(p);
-        setCellValue(tempScrollingByteMap_, p, 255);
+        setCellValue(scrollingShortMap_, p, 255);
     }
 
     Ain.close();
@@ -127,9 +127,10 @@ void CCS::printSourceSet()
 }
 
 
-void CCS::setCellValue(ScrollingByteMap & map, const RecPoint3D & pt, const int & value)
+void CCS::setCellValue(ScrollingShortMap & map, const RecPoint3D & pt, const int & value)
 {
-    map.set(pt, (unsigned char)value);
+    //map.set(pt, (unsigned char)value);
+    map.set(pt, (short)value);
 }
 
 
@@ -226,7 +227,7 @@ bool CCS::neighbourCheck(const RecPoint3D & dstPT)
     bool isValid = false;   // hsbm.get(..., isValid) -> both isSpaceValid and isTimeValid (include checkTimeStamp(time, lifetime_) )
                             // dataMap_.get(..., isValid)->isSpaceValid
                             // timeMap_.get(..., isValid)->isTimeValid (not include checkTimeStamp(time, lifetime_) )
-    return ( (int)tempScrollingByteMap_.get(dstPT, isValid) && isValid );  // occupied && spaceValid
+    return ( (int)scrollingShortMap_.get(dstPT, isValid) && isValid );  // occupied && spaceValid
 }
 
 
@@ -234,27 +235,27 @@ bool CCS::neighbourCheck(const RecPoint3D & dstPT)
 int CCS::labelGet(const RecPoint3D & dstPT)
 {
     bool isValid = false;
-    return (int)tempScrollingByteMap_.get(dstPT, isValid);
+    return (int)scrollingShortMap_.get(dstPT, isValid);
 }
 
 
 /* Set the cell with the label the same as neighbour's  */
 void CCS::labelSet(const RecPoint3D & dstPT, const int & value)
 {
-    setCellValue(tempScrollingByteMap_, dstPT, value);
+    setCellValue(scrollingShortMap_, dstPT, value);
 }
 
 
 /* Comebine 2 segments  */
 void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax)
 {
-    cout << "segLabelMax: " << segLabelMax << "-------------------------" << endl;
+//    cout << "segLabelMax: " << segLabelMax << "-------------------------" << endl;
 
     for(vector<RecPoint3D>::const_iterator itr = segLabel[segLabelMax].begin();
         itr != segLabel[segLabelMax].end();
         ++itr)
     {
-        cout << fixed << setprecision(4) << itr->x << "," << itr->y << "," << itr->z << endl;
+//        cout << fixed << setprecision(4) << itr->x << "," << itr->y << "," << itr->z << endl;
 
 
         labelSet(*itr, segLabelMin);
@@ -264,7 +265,7 @@ void CCS::segmentsCombine(const int & segLabelMin, const int & segLabelMax)
             cout << "labelSet() FAILED in segmentsCombine()! point's label is: " << labelGet(*itr) << endl;
     }
 
-    cout << "==============================================" << endl;
+//    cout << "==============================================" << endl;
 
     segLabel[segLabelMax].clear();  // delete the big-label segment
     //cout << "The clear one is segLabelMax: " <<segLabelMax << "&&&&&&&&&&&&&&&&&&&&&&&&&&&&"<<endl;
@@ -288,7 +289,7 @@ void CCS::setWithCombineCheck(const RecPoint3D & infoPT1, const RecPoint3D & inf
 {
     int LabelPT1 = labelGet(infoPT1);
     int LabelPT2 = labelGet(infoPT2);
-    //if (!LabelPT1 || !LabelPT2) cout << 'fing 0 Label from tempScrollingByteMap_' << endl;
+    //if (!LabelPT1 || !LabelPT2) cout << 'find 0 Label from scrollingShortMap_' << endl;
 
     int Labelmin = min(LabelPT1, LabelPT2);
     int Labelmax = max(LabelPT1, LabelPT2);
@@ -325,6 +326,32 @@ void CCS::createNewSegment(const RecPoint3D & dstPT)
     maxLabel++;
     labelSet(dstPT, maxLabel);
     segLabel[maxLabel].push_back(dstPT);
+
+#if 0
+    /////////////////////////////////////////////////////////////////////////////////
+    ofstream Aout;
+    Aout.open("ccs_debug.txt", ios::out|ios::app);
+    if ( !Aout.is_open() )
+        throw FAILOPENDEBUGFILE;
+
+    Aout << "*************************************************" << endl
+         << "********** current maxLabel = " << maxLabel << " **********" << endl
+         << "*************************************************" << endl;
+
+    for (int i=1; i<=maxLabel; ++i)
+    {
+        Aout << "segLabel["<< i <<"]:" <<endl;
+        for (vector<RecPoint3D>::const_iterator itr = segLabel[i].begin(); itr != segLabel[i].end(); ++itr)
+            Aout << fixed << setprecision(4) << itr->x << "," << itr->y << "\t" << labelGet(*itr) << endl;
+
+        Aout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+    }
+
+    Aout << "-----------------------------------------------------------------------------------------" << endl;
+
+    Aout.close();
+    /////////////////////////////////////////////////////////////////////////////////
+#endif
 }
 
 
@@ -416,7 +443,7 @@ void CCS::printSegLabel()
             for (vector<RecPoint3D>::const_iterator itr=segLabel[i].begin(); itr != segLabel[i].end(); ++itr)
             {
                 Eout << fixed << setprecision(4) << itr->x << "	" << itr->y << "	" << itr->z << " "
-                     << "cellValue: " << (int)tempScrollingByteMap_.get(*itr, isTimeValid)
+                     << "cellValue: " << (int)scrollingShortMap_.get(*itr, isTimeValid)
                      << endl;   ///////////////////////////////////
             }
         }

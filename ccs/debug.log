@@ -135,3 +135,11 @@ void CCS::segLabelAdjust()
 
 }
 
+
+
+
+7. change ScrollingByteMap to ScrollingShortMap
+
+- This is crucial! because:
+for scrollingMap<unsigned char>: the max Segment_Label is 2^8-1=255
+for scrollingMap<short>:         the max Segment_Label is 2^16-1=65535

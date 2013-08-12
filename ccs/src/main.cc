@@ -23,6 +23,7 @@ catch (const int & exc)
     case FAILOPENSOURCESETCHECKFILE:   cout << "Fail Open SourceSet Check File!" << endl; break;
     case FAILOPENVEHICLEPOSEFILE:      cout << "Fail Open Vehicle Pose File!"    << endl; break;
     case FAILOPENSEGLABELCHECKFILE:    cout << "Fail Open SegLabel Check File!"  << endl; break;
+    case FAILOPENDEBUGFILE:            cout << "Fail Open Debug File!"           << endl; break;
     }
 }
 

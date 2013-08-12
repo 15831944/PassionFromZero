@@ -16,7 +16,6 @@
 /////#include <algorithm>
 
 
-
 //Data Structure includes
 #include "../lib/header-only/HysteresisScrollingMap.h"
 
@@ -27,8 +26,9 @@ using namespace std;
 #define FAILOPENSOURCESETCHECKFILE -2
 #define FAILOPENVEHICLEPOSEFILE -3
 #define FAILOPENSEGLABELCHECKFILE -4
+#define FAILOPENDEBUGFILE -5
 
-#define MAXSEGMENTS 5000           // ( (mapSize_m_/cellSize_m_)^2/2 )
+#define MAXSEGMENTS 5000           // ( (mapSize_m_/cellSize_m_)^2/2 ), should be less than 2^16-1=65535, cuz we use ScrollingMap<short>
 #define MAXCELLSINMAP (mapSize_m_/cellSize_m_)*(mapSize_m_/cellSize_m_)
 
 
@@ -38,12 +38,10 @@ protected:
     set<RecPoint3D, ltpt3D> sourceSet;
 
     HysteresisScrollingByteMap segmentationMap_;    // i.e. HysteresisScrollingMap<unsigned char>, Cost map output
-    ScrollingByteMap tempScrollingByteMap_;         // i.e. ScrollingMap<unsigned char>, use for getCellCenter(), record segments number
-//    HysteresisScrollingByteMap recordHSBM_;          // temporarily store the label, for judging whether the cell is occupied
-//    ScrollingByteMap recordSBM_;                     // temporarily store the label, for judging whether the cell is occupied
+    ScrollingShortMap scrollingShortMap_;           // i.e. ScrollingMap<short>, use for recording segments label
 
-    double mapSize_m_;
-    double cellSize_m_;
+    double mapSize_m_;                              // map side length
+    double cellSize_m_;                             // cell side length
     int CCSWay_;                                    // connected component search way
 //    int CellOccupiedThreshold_;                     // cell occupied threshold ( >(*this)'s points inside one cell means occupied )
     int maxLabel;                                   // number of segments
@@ -73,7 +71,7 @@ public:
     void centerMap(const char* filename);
     void createSourceSet(const char* filename);
     void printSourceSet();
-    void setCellValue(ScrollingByteMap & map, const RecPoint3D & pt, const int & value);
+    void setCellValue(ScrollingShortMap &map, const RecPoint3D & pt, const int & value);
 
 
     void cellSweepSegment();
