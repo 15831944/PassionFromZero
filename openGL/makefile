@@ -1,7 +1,7 @@
 ## This is the makefile to generate obj/*.o of *.cc in src/
 
 CC = g++
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -lglut
 OBJDIR = obj
 _OBJ = createWindow.o
 #	   standalone_seg.o
@@ -11,12 +11,12 @@ OBJ= $(_OBJ:%=$(OBJDIR)/%)
 #DEP = GL/glut.h
 
 
-.PHONY: clean
+.PHONY: clean draw
 
-all: $(OBJDIR) $(OBJ) draw
+all: draw
 
-draw: $(SUBDIR) $(OBJ)
-	$(CC) $(OBJDIR)/* -o $@ -lglut $(CFLAGS)
+draw: $(OBJDIR) $(OBJ)
+	$(CC) $(OBJDIR)/* -o $@ $(CFLAGS)
 	@echo "Make Success!"
 
 $(OBJDIR):
