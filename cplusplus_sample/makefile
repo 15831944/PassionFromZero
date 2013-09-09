@@ -14,14 +14,16 @@ _OBJ = delta.o \
 	   test_gdb.o \
 	   test1.o \
 	   test2.o \
-	   test3.o
+           test3.o \
+           quicksort.o \
+           quicksort2.o
 OBJ= $(_OBJ:%=$(OBJDIR)/%)
 
 #LIBDIR = ../lib
 #DEP = GL/glut.h
 
 ##################################################
-EXECUTE = test3
+EXECUTE = quicksort2
 ##################################################
 
 .PHONY: clean cleanall
