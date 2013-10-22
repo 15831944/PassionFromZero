@@ -16,14 +16,16 @@ _OBJ = delta.o \
 	   test2.o \
            test3.o \
            quicksort.o \
-           quicksort2.o
+           quicksort2.o \
+           srand_time.o \
+           verticaTest.o
 OBJ= $(_OBJ:%=$(OBJDIR)/%)
 
 #LIBDIR = ../lib
 #DEP = GL/glut.h
 
 ##################################################
-EXECUTE = quicksort2
+EXECUTE = verticaTest
 ##################################################
 
 .PHONY: clean cleanall

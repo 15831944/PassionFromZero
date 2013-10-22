@@ -52,7 +52,7 @@ void SampleQuickSort(int nObj,T obj[])
 			}
 		}
 
-		if(0==nLess || 0==nLarger)
+        if(0==nLess || 0==nLarger)
 		{
 			return;
 		}
@@ -84,7 +84,7 @@ void SampleQuickSort(int nObj,T obj[])
 
 int main(void)
 {
-    int numbers[]={8,1,3,7,6,6,9,3,0,4};
+    int numbers[]={8,1,3,7,6,16,9,3,0,4};
 
 	SampleQuickSort(10,numbers);
 

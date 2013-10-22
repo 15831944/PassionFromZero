@@ -14,3 +14,6 @@ makefile
 sample.config
 quicksort.cc
 quicksort2.cc
+srand_time.cc
+verticaTest.cc
+test4.cc

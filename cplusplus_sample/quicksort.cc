@@ -29,7 +29,7 @@ void quicksort(int* src, const int & length, int pivot, int dst[])   // can we u
             more[moreLen++]=src[i];
 	}
 	 
-	if (moreLen==length)  // src[median] happens to be the lowest
+    if (moreLen==length)  // src[end] happens to be the lowest
 	{
         if (pivot)
         {
